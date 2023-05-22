@@ -1,0 +1,33 @@
+
+
+.title {
+  color: var(--purple-100);
+  margin: 20px 0px;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-top: 25px;
+
+  a {
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9)
+    }
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    p {
+      color: var(--white-900)
+    }
+  }
+
+}

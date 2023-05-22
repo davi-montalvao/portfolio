@@ -1,0 +1,38 @@
+.footer {
+  width: 100%;
+  background: rgba(123, 74, 226, 0.05);
+  height: 88px;
+  padding: 20px;
+  margin-top: 40px;
+
+  p {
+    color: var(--white-900);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+
+}
+
+.headerContent {
+  display: flex;
+  gap: 1rem;
+
+
+  a {
+    border: none;
+    background: transparent;
+    color: var(--white-900);
+    transition: filter 0.2s;
+    font-size: 18px;
+
+    &:hover {
+      color: rgba(123, 74, 226, 0.5);
+    }
+
+  }
+}
+
+
+
