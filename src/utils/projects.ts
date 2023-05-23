@@ -1,7 +1,7 @@
 import jogoVelha from '../components/assets/jogo-da-velha.png'
 import dtmoney from '../components/assets/dtmoney.png'
 import marvel from '../components/assets/marvel.png'
-import portfolio from '../components/assets/portfolio.png'
+import portfolio from '../components/assets/leiaute-web.png'
 
 
 
