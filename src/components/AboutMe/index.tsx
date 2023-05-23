@@ -3,16 +3,22 @@ import styles from "./styles.module.scss";
 
 export function AboutMe() {
   return (
-    <>
-      <h1 className={styles.title} id="aboutMe">🧐 Sobre mim</h1>
+    <main className={styles.container}>
+      <div>
+        <div>
+          <p id="aboutMe">🧐 Sobre mim</p>
+        </div>
+      </div>
       <p className={styles.description}>
-        Sou um desenvolvedor frontend com mais de 15 anos de experiência em projetos de tecnologia da informação. 
-        Tenho uma paixão por desenvolver soluções criativas e inovadoras para atender às necessidades dos usuários. 
-        Ao longo dos anos, trabalhei em diversos projetos desafiadores e contribuí para a criação de produtos que 
-        trouxeram benefícios para empresas e usuários finais. Além disso, mantenho-me atualizado com as últimas tendências 
-        e tecnologias do mercado.
+        Possuo 15 anos de experiência em tecnologia, sendo 12 anos dedicados ao desenvolvimento 
+        cobol - mainframe e 3 anos ao desenvolvimento web e mobile. 
+        Tenho uma paixão por criar soluções criativas e inovadoras para atender às necessidades 
+        dos usuários. Durante minha trajetória profissional, enfrentei diversos projetos 
+        desafiadores e contribuí para a criação de produtos que trouxeram benefícios significativos 
+        tanto para as empresas quanto para os usuários finais. Além disso, estou constantemente atualizado 
+        com as últimas tendências e tecnologias do mercado, garantindo que minhas habilidades estejam sempre em evolução.
       </p>
-    </>
+    </main>
 
   );
 }

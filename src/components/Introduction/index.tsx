@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 
 export function Introduction() {
   return (
-    <div className={styles.contentContainer}>
+    <div className={styles.container}>
       <div className={styles.introduction}>
         <h1 className={styles.title}>
           👋 Saudações!

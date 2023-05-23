@@ -14,9 +14,12 @@ import styles from "./styles.module.scss";
 
 export function Skills() {
   return (
-    <>
-    <h1 className={styles.title} id="skills">🧑‍💻 Skills · Experiências</h1>
-    <p className={styles.description}>Techs que uso no dia a dia</p>
+    <main className={styles.container}>
+      <div>
+        <div>
+          <p id="skills">🧑‍💻 Skills · Experiências</p>
+        </div>
+      </div>
     <div className={styles.logos}>
       <Image src={logoReact} alt="logo react"/>
       <Image src={logoJavascript} alt="logo javascript"/>
@@ -28,6 +31,6 @@ export function Skills() {
       <Image src={logoSass} alt="logo sass"/>
       <Image src={logoCss} alt="logo css"/>
     </div>
-</>
+  </main>
   );
 }

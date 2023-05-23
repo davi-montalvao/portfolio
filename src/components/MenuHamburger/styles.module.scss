@@ -1,0 +1,50 @@
+.menuHamburguer {
+  position: relative;
+}
+.menuIcon {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--white-900);
+    margin-bottom: 5px;
+  }
+}
+
+.open .menuIcon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.open .menuIcon span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .menuIcon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.menu {
+  display: none;
+  a {
+    color: var(--white-900);
+    font-size: 16px;
+    padding: 14px
+  }
+}
+
+.open .menu {
+  display: block;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
