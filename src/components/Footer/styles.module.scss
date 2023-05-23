@@ -9,6 +9,9 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    @media (max-width: 702px) {
+      font-size: 12px;
+    }
   }
 }
 
