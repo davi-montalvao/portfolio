@@ -1,7 +1,9 @@
-import styles from "./styles.module.scss";
 import Image from 'next/image'
 import logoWhats from '../../components/assets/logo-whats.svg'
 import logoEmail from '../../components/assets/logo-email.svg'
+
+import styles from "./styles.module.scss";
+
 export function Contacts() {
 
   return (

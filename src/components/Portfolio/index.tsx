@@ -1,8 +1,7 @@
 import Image, { StaticImageData } from 'next/image'
-
-import styles from "./styles.module.scss";
 import { projects } from '@/src/utils/projects';
 
+import styles from "./styles.module.scss";
 
 interface Project {
   id: number,
@@ -34,6 +33,7 @@ export function Portfolio() {
              <a href={item.codeLink} target='_blank' rel='noreferrer'>
                <button>Veja no Github</button>
              </a>
+             
            </div>
          </div>
        ))}        

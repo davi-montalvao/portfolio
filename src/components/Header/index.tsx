@@ -1,8 +1,8 @@
 
 import { useResposive } from "@/src/hooks/useResponsive";
+import { MenuHamburger } from "../MenuHamburger";
 
 import styles from "./styles.module.scss";
-import { MenuHamburger } from "../MenuHamburger";
 
 export function Header() {
 

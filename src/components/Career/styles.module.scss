@@ -38,10 +38,20 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+
+        @media (max-width: 702px) {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
         p {
           padding-top: 5px;
-          color: var(--purple-100)
+          color: var(--purple-100);
+          @media (max-width: 702px) {
+            font-size: 16px;
+          }
         }
+       
       }
     }
     p {
