@@ -1,11 +1,11 @@
 const companies = [
-  // {
-  //   id: 1,
-  //   title: `Desenvolvedor front-end na Talent Four`,
-  //   description: `Desenvolvimento de aplicações para o grupo Ultra`,
-  //   time: 'Alguns dias...',
-  //   totalTime: 'Junho/2023 - Atualmente'
-  // },
+  {
+    id: 1,
+    title: `Desenvolvedor web na TalentFour Consulting`,
+    description: `Desenvolvimento web utilizando Javascript, ReactJS, HTML, CSS e Redux.`,
+    time: '1 mês',
+    totalTime: 'Junho/2023 - Atualmente'
+  },
   {
     id: 2,
     title: `Desenvolvedor front-end na Sabion Digital`,
