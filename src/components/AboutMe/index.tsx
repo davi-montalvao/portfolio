@@ -10,8 +10,8 @@ export function AboutMe() {
         </div>
       </div>
       <p className={styles.description}>
-        Possuo 15 anos de experiência em tecnologia, sendo 12 anos dedicados ao desenvolvimento 
-        cobol - mainframe e 3 anos ao desenvolvimento web e mobile. 
+        Possuo 16 anos de experiência em tecnologia, sendo 12 anos dedicados ao desenvolvimento 
+        cobol - mainframe e 4 anos ao desenvolvimento web e mobile. 
         Tenho uma paixão por criar soluções criativas e inovadoras para atender às necessidades 
         dos usuários. Durante minha trajetória profissional, enfrentei diversos projetos 
         desafiadores e contribuí para a criação de produtos que trouxeram benefícios significativos 
