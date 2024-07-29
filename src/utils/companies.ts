@@ -3,7 +3,7 @@ const companies = [
     id: 1,
     title: `Desenvolvedor web na TalentFour Consulting`,
     description: `Desenvolvimento web utilizando Javascript, ReactJS, HTML, CSS e Redux.`,
-    time: '11 meses',
+    time: '',
     totalTime: 'Junho/2023 - Atualmente'
   },
   {
