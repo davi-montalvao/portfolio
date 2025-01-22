@@ -47,7 +47,7 @@ const projects = [
     description: "A aplicação 'dt money' é um projeto desenvolvido utilizando React.js, que faz parte do segundo capítulo do módulo 'Ignite' da escola Rocktseat.",
     image: dtMoneyImage,
     github: "https://github.com/davi-montalvao/dt-money",
-    site: "https://github.com/davi-montalvao/dt-money"
+    site: "https://dt-money-phi-self.vercel.app/"
   },
   {
     title: "Marvel",
