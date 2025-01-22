@@ -33,7 +33,7 @@ const projects = [
     description: "oferece uma interface para explorar informações detalhadas sobre o universo de Star Wars. Os usuários podem navegar por diferentes categorias. Cada seção permite que os fãs acessem dados específicos sobre personagens, locais, veículos e outros elementos icônicos da saga.",
     image: starWars,
     github: "https://github.com/davi-montalvao/star-wars",
-    site: "https://universe-batman.vercel.app/"
+    site: "https://star-wars-taupe-eta.vercel.app/"
   },
   {
     title: "Portfólio",
