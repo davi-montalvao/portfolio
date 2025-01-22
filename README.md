@@ -1,38 +1,36 @@
-# Portfolio
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/davi-montalvao/portfolio/blob/master/LICENSE)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# 💭 Sobre o projeto
-A aplicação portfolio é uma apresentação concisa e impactante sobre minhas experiências, habilidades e projetos. Feito com componentes React, Typescript e Sass
+## Getting Started
 
-## 🖥️ Layout web
-![Web 1](https://github.com/davi-montalvao/portfolio/blob/main/src/components/assets/leiaute-web.png)
+First, run the development server:
 
-## 📱 Layout mobile
-![Mobile 1](https://github.com/davi-montalvao/portfolio/blob/main/src/components/assets/leiaute-mobile.png)
-
-# 🚀 Tecnologias utilizadas
-## Front-end
-- Typescript / HTML / Sass
-- ReactJS
-- NextJs
-
-# 🎲 Como executar o projeto
 ```bash
-# clonar respositório
-git clone https://github.com/davi-montalvao/portfolio.git
-
-# entrar na pasta do projeto heroes
-cd portfolio
-
-# instalar as dependências
-yarn install
-
-# executar o projeto
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-# Autor
-Davi Montalvão
-https://www.linkedin.com/in/davi-montalvao-dev/
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Made with love and persistence 🤍💪🏽
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
