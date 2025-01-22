@@ -11,6 +11,7 @@ import portfolioImage from "@/assets/leiaute-web.png"
 import dtMoneyImage from "@/assets/dt-money.png"
 import marvelImage from "@/assets/marvel.png"
 import batmanImage from "@/assets/batman.jpeg"
+import starWars from "@/assets/star-wars.jpeg"
 
 const projects = [
   {
@@ -26,6 +27,13 @@ const projects = [
     image: jogoDaVelhaImage,
     github: "https://github.com/davi-montalvao/jogo-da-velha",
     site: "https://jogo-da-velha-nu-olive.vercel.app/"
+  },
+  {
+    title: "Star wars",
+    description: "oferece uma interface para explorar informações detalhadas sobre o universo de Star Wars. Os usuários podem navegar por diferentes categorias. Cada seção permite que os fãs acessem dados específicos sobre personagens, locais, veículos e outros elementos icônicos da saga.",
+    image: starWars,
+    github: "https://github.com/davi-montalvao/star-wars",
+    site: "https://universe-batman.vercel.app/"
   },
   {
     title: "Portfólio",
