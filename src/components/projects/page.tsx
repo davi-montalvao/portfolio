@@ -10,31 +10,43 @@ import jogoDaVelhaImage from "@/assets/jogo-da-velha.png"
 import portfolioImage from "@/assets/leiaute-web.png"
 import dtMoneyImage from "@/assets/dt-money.png"
 import marvelImage from "@/assets/marvel.png"
+import batmanImage from "@/assets/batman.jpeg"
 
 const projects = [
+  {
+    title: "Batman",
+    description: "Explore o mundo obscuro e complexo do Batman, de personagens icônicos a locais lendários.",
+    image: batmanImage,
+    github: "https://github.com/davi-montalvao/Universe-Batman",
+    site: "https://universe-batman.vercel.app/"
+  },
   {
     title: "Jogo da velha",
     description: "Jogo de estratégia simples e popular, jogado em um tabuleiro de 3x3, onde dois jogadores, X e O, alternam-se para marcar suas respectivas jogadas no tabuleiro.",
     image: jogoDaVelhaImage,
-    github: "https://github.com/davi-montalvao/jogo-da-velha"
+    github: "https://github.com/davi-montalvao/jogo-da-velha",
+    site: "https://jogo-da-velha-nu-olive.vercel.app/"
   },
   {
     title: "Portfólio",
     description: "A aplicação portfolio é uma apresentação concisa e impactante sobre minhas experiências, habilidades e projetos. Feito com componentes React, Typescript e Sass.",
     image: portfolioImage,
-    github: "https://github.com/davi-montalvao/portfolio"
+    github: "https://github.com/davi-montalvao/portfolio",
+    site: "https://www.davimontalvao.com.br/"
   },
   {
     title: "Dt Money",
     description: "A aplicação 'dt money' é um projeto desenvolvido utilizando React.js, que faz parte do segundo capítulo do módulo 'Ignite' da escola Rocktseat.",
     image: dtMoneyImage,
-    github: "https://github.com/davi-montalvao/dt-money"
+    github: "https://github.com/davi-montalvao/dt-money",
+    site: "https://github.com/davi-montalvao/dt-money"
   },
   {
     title: "Marvel",
     description: "Site de busca de quadrinhos usando a API da Marvel. Feito com componentes React, TypeScript e Styled Components.",
     image: marvelImage,
-    github: "https://github.com/davi-montalvao/marvel"
+    github: "https://github.com/davi-montalvao/marvel",
+    site: "https://marvel-black-six.vercel.app/"
   }
 ]
 
@@ -69,9 +81,15 @@ export function Projects() {
                   <CardDescription className="mb-4 text-slate-300">
                     {project.description}
                   </CardDescription>
-                  <Button variant="secondary" className="bg-[#ffd95a] text-slate-900 hover:bg-[#ffd95a]/80" asChild>
+                  <Button variant="secondary" className="bg-[#ffd95a] text-slate-900 hover:bg-[#ffd95a]/80 mr-4" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       Veja no Github
+                    </a>
+                  </Button>
+
+                  <Button variant="ghost"  className="bg-[#ffd95a] text-slate-900 hover:bg-[#ffd95a]/80 mr-4" asChild>
+                    <a href={project.site} target="_blank" rel="noopener noreferrer">
+                      Acesse o site
                     </a>
                   </Button>
                 </CardContent>
