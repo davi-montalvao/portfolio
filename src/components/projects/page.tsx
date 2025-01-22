@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 // Importação direta das imagens
 import jogoDaVelhaImage from "@/assets/jogo-da-velha.png"
-import portfolioImage from "@/assets/leiaute-web.png"
+import portfolioImage from "@/assets/leiaute-web.jpeg"
 import dtMoneyImage from "@/assets/dt-money.png"
 import marvelImage from "@/assets/marvel.png"
 import batmanImage from "@/assets/batman.jpeg"
