@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Github, Linkedin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { motion } from 'framer-motion'
-import fotoPerfil from '@/assets/foto-perfil.jpeg'
+import fotoPerfil from '@/assets/foto-perfil.jpg'
 
 export function Hero() {
   return (
