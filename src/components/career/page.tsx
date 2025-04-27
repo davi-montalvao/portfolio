@@ -23,7 +23,7 @@ const experiences = [
   {
     id: 1,
     title: `Desenvolvedor web na TalentFour Consulting`,
-    description: `Desenvolvimento web utilizando Javascript, ReactJS, HTML, CSS e Redux.`,
+    description: `Desenvolvedor front-end com expertise em Javascript, ReactJS, HTML, CSS e Redux. Atuo na manutenção e evolução de sites WordPress, gestão de landing pages em Marketing Cloud e criação de soluções de atendimento automatizado para WhatsApp através da plataforma Blip.`,
     time: calculateTimeDifference(6, 2023), // Junho/2023
     totalTime: 'Junho/2023 - Atualmente'
   },
