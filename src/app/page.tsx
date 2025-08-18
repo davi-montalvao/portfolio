@@ -5,21 +5,38 @@ import { Hero } from "@/components/hero/page";
 import { Projects } from "@/components/projects/page";
 import { Skills } from "@/components/skills/page";
 
-
 export default function Home() {
   return (
     <>
       <Header />
-      <div className="pt-16"> {/* Adiciona um padding-top de 4rem (16) */}
-        <main>
-          <Hero />
-          <Skills />
-          <Projects />
-          <Career />
-          <Footer />
+      <div className="pt-20"> {/* Ajustado para o novo header */}
+        <main className="relative">
+          {/* Hero Section */}
+          <section id="sobre">
+            <Hero />
+          </section>
+
+          {/* Skills Section */}
+          <section id="skills">
+            <Skills />
+          </section>
+
+          {/* Projects Section */}
+          <section id="portfolio">
+            <Projects />
+          </section>
+
+          {/* Career Section */}
+          <section id="carreira">
+            <Career />
+          </section>
+
+          {/* Footer Section */}
+          <section id="contato">
+            <Footer />
+          </section>
         </main>
       </div>
     </>
   )
 }
-

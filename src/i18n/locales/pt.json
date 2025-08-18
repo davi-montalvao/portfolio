@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "about": "Sobre mim",
+    "portfolio": "Portfólio",
+    "skills": "Skills",
+    "career": "Carreira",
+    "contact": "Contato"
+  },
+  "hero": {
+    "available": "Disponível para novos projetos",
+    "greeting": "Oi, eu sou o",
+    "title": "Front-end Developer",
+    "description": "Com 17 anos de experiência no setor de tecnologia, sendo 12 anos dedicados ao desenvolvimento em Cobol para mainframe e 5 anos no desenvolvimento de soluções web e mobile, sou apaixonado por criar soluções inovadoras que atendem às necessidades dos usuários.",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "stats": {
+      "experience": "Anos de Experiência",
+      "projects": "Projetos Entregues",
+      "commitment": "Comprometimento"
+    }
+  },
+  "skills": {
+    "badge": "Habilidades & Experiências",
+    "title": "Skills & Experiências",
+    "subtitle": "Tecnologias e ferramentas que utilizo para criar soluções inovadoras e eficientes",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "languages": "Linguagens",
+      "tools": "Ferramentas"
+    },
+    "summary": {
+      "experience": "Anos de Experiência",
+      "delivered": "Projetos Entregues",
+      "technologies": "Tecnologias Dominadas"
+    }
+  },
+  "projects": {
+    "badge": "Meus Trabalhos",
+    "title": "Portfólio de Projetos",
+    "subtitle": "Uma seleção dos meus melhores projetos, demonstrando habilidades técnicas e criatividade",
+    "categories": {
+      "all": "Todos",
+      "frontend": "Frontend",
+      "games": "Games",
+      "apis": "APIs"
+    },
+    "featured": "Destaque",
+    "actions": {
+      "code": "Código",
+      "demo": "Demo"
+    },
+    "cta": {
+      "title": "Tem um projeto em mente?",
+      "subtitle": "Vamos trabalhar juntos para torná-lo realidade!",
+      "button": "Vamos Conversar"
+    }
+  },
+  "career": {
+    "badge": "Jornada Profissional",
+    "title": "Carreira & Experiência",
+    "subtitle": "Uma jornada de 17+ anos transformando ideias em soluções tecnológicas inovadoras",
+    "summary": {
+      "experience": "Anos de Experiência",
+      "companies": "Empresas",
+      "areas": "Áreas de Atuação",
+      "commitment": "Comprometimento"
+    }
+  },
+  "footer": {
+    "description": "Transformando ideias em experiências digitais excepcionais. Especializado em React, TypeScript e desenvolvimento web moderno.",
+    "quickLinks": "Navegação Rápida",
+    "contact": "Entre em Contato",
+    "cta": {
+      "title": "Pronto para começar seu projeto?",
+      "subtitle": "Vamos transformar suas ideias em realidade digital!",
+      "message": "Enviar Mensagem"
+    },
+    "copyright": "Copyright © 2024",
+    "madeWith": "Made with",
+    "backToTop": "Voltar ao topo"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "preparing": "Preparando seu portfólio",
+    "error": {
+      "title": "Ops! Algo deu errado",
+      "message": "Parece que encontramos um problema inesperado. Não se preocupe, isso pode acontecer às vezes.",
+      "details": "Detalhes do erro (Dev)",
+      "messageLabel": "Mensagem:",
+      "tryAgain": "Tentar Novamente",
+      "backHome": "Voltar ao Início",
+      "contactInfo": "Se o problema persistir, entre em contato:"
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "message": "A página que você está procurando não existe ou foi movida. Verifique o URL ou navegue pelas opções abaixo.",
+      "backHome": "Voltar ao Início",
+      "back": "Voltar",
+      "quickNav": "Navegação Rápida",
+      "needHelp": "Precisa de ajuda? Entre em contato:"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "about": "About me",
+    "portfolio": "Portfolio",
+    "skills": "Skills",
+    "career": "Career",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for new projects",
+    "greeting": "Hi, I'm",
+    "title": "Front-end Developer",
+    "description": "With 17+ years of experience in the technology sector, including 12 years dedicated to Cobol development for mainframes and 5 years in web and mobile development, I'm passionate about creating innovative solutions that meet user needs.",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Projects Delivered",
+      "commitment": "Commitment"
+    }
+  },
+  "skills": {
+    "badge": "Skills & Experience",
+    "title": "Skills & Experience",
+    "subtitle": "Technologies and tools I use to create innovative and efficient solutions",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "languages": "Languages",
+      "tools": "Tools"
+    },
+    "summary": {
+      "experience": "Years of Experience",
+      "delivered": "Projects Delivered",
+      "technologies": "Technologies Mastered"
+    }
+  },
+  "projects": {
+    "badge": "My Work",
+    "title": "Project Portfolio",
+    "subtitle": "A selection of my best projects, demonstrating technical skills and creativity",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "games": "Games",
+      "apis": "APIs"
+    },
+    "featured": "Featured",
+    "actions": {
+      "code": "Code",
+      "demo": "Demo"
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "subtitle": "Let's work together to make it a reality!",
+      "button": "Let's Talk"
+    }
+  },
+  "career": {
+    "badge": "Professional Journey",
+    "title": "Career & Experience",
+    "subtitle": "A 17+ year journey transforming ideas into innovative technological solutions",
+    "summary": {
+      "experience": "Years of Experience",
+      "companies": "Companies",
+      "areas": "Areas of Expertise",
+      "commitment": "Commitment"
+    }
+  },
+  "footer": {
+    "description": "Transforming ideas into exceptional digital experiences. Specialized in React, TypeScript and modern web development.",
+    "quickLinks": "Quick Navigation",
+    "contact": "Get in Touch",
+    "cta": {
+      "title": "Ready to start your project?",
+      "subtitle": "Let's transform your ideas into digital reality!",
+      "message": "Send Message"
+    },
+    "copyright": "Copyright © 2024",
+    "madeWith": "Made with",
+    "backToTop": "Back to top"
+  },
+  "common": {
+    "loading": "Loading...",
+    "preparing": "Preparing your portfolio",
+    "error": {
+      "title": "Oops! Something went wrong",
+      "message": "It looks like we encountered an unexpected problem. Don't worry, this can happen sometimes.",
+      "details": "Error details (Dev)",
+      "messageLabel": "Message:",
+      "tryAgain": "Try Again",
+      "backHome": "Back to Home",
+      "contactInfo": "If the problem persists, contact us:"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "message": "The page you're looking for doesn't exist or has been moved. Check the URL or navigate through the options below.",
+      "backHome": "Back to Home",
+      "back": "Back",
+      "quickNav": "Quick Navigation",
+      "needHelp": "Need help? Contact us:"
+    }
+  }
+}
