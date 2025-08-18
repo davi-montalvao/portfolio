@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowUp, ArrowDown } from "lucide-react";
+import { Menu, X, ArrowUp, ArrowDown } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher/page";
 import { TranslatedSpan } from "@/components/translated-text/page";
 

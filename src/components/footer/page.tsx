@@ -1,10 +1,10 @@
 "use client"
 
-import { ArrowUp, Mail, Phone, Github, Linkedin, MessageCircle, Download, Heart, Zap } from 'lucide-react'
+import { ArrowUp, Mail, Phone, Github, Linkedin, MessageCircle } from 'lucide-react'
 import Link from "next/link"
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { TranslatedText, TranslatedH3, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import { TranslatedH3, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
 const socialLinks = [
   {

@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Briefcase, Calendar, MapPin, TrendingUp, Award, Users, Code, Database } from 'lucide-react'
-import { TranslatedText, TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
 // Função para calcular a diferença de tempo em anos e meses
 function calculateTimeDifference(startMonth: number, startYear: number) {

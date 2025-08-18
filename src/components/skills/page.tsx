@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card"
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Code, Zap, Target, TrendingUp } from 'lucide-react'
-import { TranslatedText, TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
 const skills = [
   {

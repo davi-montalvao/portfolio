@@ -1,11 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Linkedin, Download, ArrowRight, Sparkles } from 'lucide-react'
+import { Github, Linkedin, ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { motion, useScroll, useTransform } from 'framer-motion'
 import fotoPerfil from '@/assets/foto-perfil.jpg'
-import { TranslatedText, TranslatedH1, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import { TranslatedH1, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
 export function Hero() {
   const { scrollY } = useScroll();
