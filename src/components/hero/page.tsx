@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Github, Linkedin, ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import fotoPerfil from '@/assets/foto-perfil.jpg'
 import { TranslatedH1, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
