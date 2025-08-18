@@ -9,7 +9,6 @@ import { TranslatedSpan } from "@/components/translated-text/page";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
   const { scrollY } = useScroll();
 
@@ -27,7 +26,6 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
       setShowScrollButton(window.scrollY > 200);
     };
 

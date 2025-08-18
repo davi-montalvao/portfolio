@@ -3,10 +3,10 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import { Github, ExternalLink, ArrowRight, Star, Code, Globe } from 'lucide-react'
-import { TranslatedText, TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import { Github,ArrowRight, Star, Code, Globe } from 'lucide-react'
+import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
 // Importação direta das imagens
 import jogoDaVelhaImage from "@/assets/jogo-da-velha.png"
