@@ -36,11 +36,14 @@ export function Header() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToBottom = () => {
-    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
   };
 
   const navItems = [
@@ -105,10 +108,7 @@ export function Header() {
                   href={item.href}
                   className="relative group text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300"
                 >
-                  <TranslatedSpan
-                    pt={item.label.pt}
-                    en={item.label.en}
-                  />
+                  <TranslatedSpan pt={item.label.pt} en={item.label.en} />
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] transition-all duration-300 group-hover:w-full" />
                 </Link>
               </motion.div>
@@ -117,7 +117,6 @@ export function Header() {
 
           {/* Right Side - Language Switcher and Mobile Menu */}
           <div className="flex items-center gap-4">
-            {/* Language Switcher */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -127,7 +126,6 @@ export function Header() {
               <LanguageSwitcher />
             </motion.div>
 
-            {/* Mobile Menu Button */}
             <motion.button
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -153,17 +151,16 @@ export function Header() {
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className={`md:hidden absolute top-full left-0 w-full ${
-            menuOpen ? 'block' : 'hidden'
+            menuOpen ? "block" : "hidden"
           }`}
           style={{
-            backgroundColor: 'rgba(15, 23, 42, 0.98)',
-            backdropFilter: 'blur(20px)',
-            borderTop: '1px solid rgba(59, 130, 246, 0.2)',
-            boxShadow: '0 10px 25px rgba(15, 23, 42, 0.5)',
+            backgroundColor: "rgba(15, 23, 42, 0.98)",
+            backdropFilter: "blur(20px)",
+            borderTop: "1px solid rgba(59, 130, 246, 0.2)",
+            boxShadow: "0 10px 25px rgba(15, 23, 42, 0.5)",
           }}
         >
           <div className="px-4 py-6 space-y-4">
-            {/* Language Switcher in Mobile Menu */}
             <div className="pb-4 border-b border-white/10">
               <LanguageSwitcher />
             </div>
@@ -174,23 +171,16 @@ export function Header() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{
                   opacity: menuOpen ? 1 : 0,
-                  x: menuOpen ? 0 : -20
+                  x: menuOpen ? 0 : -20,
                 }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.1,
-                  ease: "easeOut"
-                }}
+                transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut" }}
               >
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
                   className="block py-3 px-4 rounded-lg text-white hover:bg-white/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-white/5 hover:to-white/10"
                 >
-                  <TranslatedSpan
-                    pt={item.label.pt}
-                    en={item.label.en}
-                  />
+                  <TranslatedSpan pt={item.label.pt} en={item.label.en} />
                 </Link>
               </motion.div>
             ))}
@@ -203,13 +193,12 @@ export function Header() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{
           opacity: showScrollButton ? 1 : 0,
-          scale: showScrollButton ? 1 : 0.8
+          scale: showScrollButton ? 1 : 0.8,
         }}
         transition={{ duration: 0.3 }}
         className="fixed bottom-6 right-6 z-40 md:hidden"
       >
         <div className="flex flex-col gap-2">
-          {/* Scroll to Top Button */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -220,7 +209,6 @@ export function Header() {
             <ArrowUp className="h-5 w-5" />
           </motion.button>
 
-          {/* Scroll to Bottom Button */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
