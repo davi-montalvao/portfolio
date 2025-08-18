@@ -16,8 +16,8 @@ export const localeFlags: Record<Locale, string> = {
 // Função para obter traduções
 export async function getTranslations(locale: Locale) {
   try {
-    const module = await import(`./locales/${locale}.json`);
-    return module.default;
+    const localeModule = await import(`./locales/${locale}.json`);
+    return localeModule.default;
   } catch (error) {
     console.error('Error loading locale:', error);
     // Fallback para português
