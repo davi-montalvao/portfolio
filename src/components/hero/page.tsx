@@ -8,10 +8,6 @@ import fotoPerfil from '@/assets/foto-perfil.jpg'
 import { TranslatedH1, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
 
 export function Hero() {
-  const { scrollY } = useScroll();
-
-  const y = useTransform(scrollY, [0, 300], [0, 100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
