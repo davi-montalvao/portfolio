@@ -14,7 +14,7 @@ import portfolioImage from "@/assets/leiaute-web.jpeg"
 import dtMoneyImage from "@/assets/dt-money.png"
 import marvelImage from "@/assets/marvel.png"
 import batmanImage from "@/assets/batman.jpeg"
-import starWars from "@/assets/star-wars.jpeg"
+import starWars from "@/assets/star-wars.png"
 
 const categories = [
   { name: { pt: "Todos", en: "All" }, value: "all", color: "from-[#ffd95a] to-[#ff6b6b]" },
