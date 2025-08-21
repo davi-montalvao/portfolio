@@ -15,6 +15,7 @@ import dtMoneyImage from "@/assets/dt-money.png"
 import marvelImage from "@/assets/marvel.png"
 import batmanImage from "@/assets/batman.jpeg"
 import starWars from "@/assets/star-wars.png"
+import footballTeamsImage from "@/assets/football-teams.png"
 
 const categories = [
   { name: { pt: "Todos", en: "All" }, value: "all", color: "from-[#ffd95a] to-[#ff6b6b]" },
@@ -101,6 +102,19 @@ const projects = [
     technologies: ["React", "TypeScript", "API", "Comics"],
     featured: false,
     category: "Entertainment"
+  },
+  {
+    title: "Football Teams",
+    description: {
+      pt: "Aplicativo web para formar times de futebol balanceados automaticamente. Suporta Futsal, Society e Campo com diferentes posições e sistema de avaliação de habilidades.",
+      en: "Web application to automatically form balanced football teams. Supports Futsal, Society and Field with different positions and skill rating system."
+    },
+    image: footballTeamsImage,
+    github: "https://github.com/davi-montalvao/football-teams",
+    site: "https://football-teams-six.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    featured: true,
+    category: "Frontend"
   }
 ]
 
