@@ -16,6 +16,7 @@ import marvelImage from "@/assets/marvel.png"
 import batmanImage from "@/assets/batman.jpeg"
 import starWars from "@/assets/star-wars.png"
 import footballTeamsImage from "@/assets/football-teams.png"
+import buscaCineImage from "@/assets/busca-cine.jpeg"
 
 const categories = [
   { name: { pt: "Todos", en: "All" }, value: "all", color: "from-[#ffd95a] to-[#ff6b6b]" },
@@ -114,6 +115,20 @@ const projects = [
     site: "https://football-teams-six.vercel.app/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     featured: true,
+    category: "Frontend"
+  }
+  ,
+  {
+    title: "Busca Cine",
+    description: {
+      pt: "Site de busca de filmes com informações, trailers e detalhes de exibição. Interface limpa e responsiva para encontrar filmes rapidamente.",
+      en: "Movie search site with information, trailers and screening details. Clean, responsive interface to find films quickly."
+    },
+    image: buscaCineImage,
+    github: "https://github.com/davi-montalvao/buscacine",
+    site: "https://buscacine-i8v2.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    featured: false,
     category: "Frontend"
   }
 ]
