@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
 import { LanguageProvider } from "@/contexts/LanguageContext"
 
 const inter = Inter({
@@ -128,6 +129,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   )

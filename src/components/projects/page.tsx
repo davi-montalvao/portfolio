@@ -17,6 +17,7 @@ import batmanImage from "@/assets/batman.jpeg"
 import starWars from "@/assets/star-wars.png"
 import footballTeamsImage from "@/assets/football-teams.png"
 import buscaCineImage from "@/assets/busca-cine.jpeg"
+import plenarteBalletImage from "@/assets/plenarte-ballet.png"
 
 const categories = [
   { name: { pt: "Todos", en: "All" }, value: "all", color: "from-[#ffd95a] to-[#ff6b6b]" },
@@ -26,6 +27,19 @@ const categories = [
 ]
 
 const projects = [
+  {
+    title: "Plenarte Ballet",
+    description: {
+      pt: "Escola Plenarte Ballet é um espaço dedicado ao ensino do ballet clássico com excelência, arte e propósito.",
+      en: "Plenarte Ballet School is a space dedicated to teaching classical ballet with excellence, artistry, and purpose."
+    },
+    image: plenarteBalletImage,
+    github: "https://github.com/davi-montalvao/plenart-ballet",
+    site: "https://www.plenarteballet.com.br/",
+    technologies: ["React", "TypeScript", "CSS3", "Responsivo"],
+    featured: true,
+    category: "Frontend"
+  },
   {
     title: "Batman Universe",
     description: {
