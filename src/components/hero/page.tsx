@@ -1,14 +1,20 @@
-"use client"
+'use client';
 
-import Image from "next/image"
-import { Github, Linkedin, ArrowRight, Sparkles } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { motion } from 'framer-motion'
-import fotoPerfil from '@/assets/foto-perfil.jpg'
-import { TranslatedH1, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import Image from 'next/image';
+import { Github, Linkedin, ArrowRight, Sparkles, Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import fotoPerfil from '@/assets/foto-perfil.jpg';
+import {
+  TranslatedH1,
+  TranslatedP,
+  TranslatedSpan,
+} from '@/components/translated-text/page';
+import { useLanguageContext } from '@/contexts/LanguageContext';
 
 export function Hero() {
-
+  const { currentLocale } = useLanguageContext();
+  const isEnglish = currentLocale === 'en';
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
@@ -22,7 +28,7 @@ export function Hero() {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: 'linear',
           }}
         />
         <motion.div
@@ -34,7 +40,7 @@ export function Hero() {
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "linear"
+            ease: 'linear',
           }}
         />
       </div>
@@ -53,20 +59,20 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-white/20"
-            >
-              <Sparkles className="h-4 w-4 text-[#ffd95a]" />
-              <TranslatedSpan
-                pt="Disponível para novos projetos"
-                en="Available for new projects"
-                className="text-sm text-slate-300"
-              />
-            </motion.div>
+            {/* Badge — only in English */}
+            {isEnglish && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-white/20"
+              >
+                <Sparkles className="h-4 w-4 text-[#ffd95a]" />
+                <span className="text-sm text-slate-300">
+                  Available for new projects • Remote work worldwide
+                </span>
+              </motion.div>
+            )}
 
             {/* Greeting */}
             <motion.div
@@ -84,7 +90,7 @@ export function Hero() {
                   transition={{
                     duration: 2,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: 'easeInOut',
                   }}
                 >
                   👋
@@ -102,9 +108,9 @@ export function Hero() {
 
               <div className="flex items-center gap-4">
                 <TranslatedH1
-                  pt="Desenvolvedor Web"
-                  en="Web Developer"
-                  className="text-4xl lg:text-6xl font-bold mb-6"
+                  pt="Da robustez do Mainframe às tecnologias modernas como React."
+                  en="From mainframe robustness to modern technologies like React."
+                  className="text-2xl lg:text-4xl font-bold mb-6 leading-tight max-w-2xl"
                 />
                 <motion.div
                   className="w-3 h-3 bg-[#ffd95a] rounded-full"
@@ -115,7 +121,7 @@ export function Hero() {
                   transition={{
                     duration: 2,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: 'easeInOut',
                   }}
                 />
               </div>
@@ -123,24 +129,53 @@ export function Hero() {
 
             {/* Description */}
             <TranslatedP
-              pt="Com 17 anos de experiência no setor de tecnologia, sendo 12 anos dedicados ao desenvolvimento em Cobol para mainframe e 5 anos no desenvolvimento de soluções web e mobile, sou apaixonado por criar soluções inovadoras que atendem às necessidades dos usuários."
-              en="With 17+ years of experience in the technology sector, including 12 years dedicated to Cobol development for mainframes and 5 years in web and mobile development, I'm passionate about creating innovative solutions that meet user needs."
+              pt="Com 17 anos de experiência no setor de tecnologia, sendo 12 anos dedicados ao desenvolvimento em Cobol para mainframe e 6 anos no desenvolvimento de soluções web e mobile, sou apaixonado por criar soluções inovadoras que atendem às necessidades dos usuários."
+              en="With 18+ years of experience in the technology sector, including 12 years dedicated to Cobol development for mainframes and 6 years in web and mobile development, I'm passionate about creating innovative solutions that meet user needs."
               className="text-lg leading-relaxed text-slate-300 max-w-2xl"
             />
+
+            {/* Timezone / availability — English only */}
+            {isEnglish && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45 }}
+                className="text-sm text-slate-400 max-w-2xl"
+              >
+                Based in Brazil (GMT-3). Available for remote work worldwide.
+              </motion.p>
+            )}
 
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 flex-wrap"
             >
+              {isEnglish && (
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold group order-first w-full sm:w-auto"
+                  asChild
+                >
+                  <a href="mailto:drmontalvao@gmail.com">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Email me
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
+              )}
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold group"
+                className={isEnglish ? 'border-white/20 text-white hover:bg-white/10 backdrop-blur-sm' : 'bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold group'}
                 asChild
               >
-                <a href="https://github.com/davi-montalvao" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/davi-montalvao"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Github className="mr-2 h-5 w-5" />
                   Github
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -153,7 +188,11 @@ export function Hero() {
                 className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/davi-montalvao-dev/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/davi-montalvao-dev/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Linkedin className="mr-2 h-5 w-5" />
                   LinkedIn
                 </a>
@@ -168,7 +207,7 @@ export function Hero() {
               className="flex items-center gap-8 pt-4"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#ffd95a]">17+</div>
+                <div className="text-2xl font-bold text-[#ffd95a]">18+</div>
                 <TranslatedSpan
                   pt="Anos de Experiência"
                   en="Years of Experience"
@@ -212,7 +251,7 @@ export function Hero() {
                 transition={{
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: 'easeInOut',
                 }}
               />
 
@@ -242,7 +281,7 @@ export function Hero() {
                     transition={{
                       duration: 3,
                       repeat: Infinity,
-                      ease: "easeInOut"
+                      ease: 'easeInOut',
                     }}
                   >
                     <span className="text-2xl">🚀</span>
@@ -257,7 +296,7 @@ export function Hero() {
                     transition={{
                       duration: 4,
                       repeat: Infinity,
-                      ease: "easeInOut"
+                      ease: 'easeInOut',
                     }}
                   >
                     <span className="text-xl">💻</span>
@@ -284,7 +323,7 @@ export function Hero() {
           transition={{
             duration: 2,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
         >
           <motion.div
@@ -295,11 +334,11 @@ export function Hero() {
             transition={{
               duration: 2,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: 'easeInOut',
             }}
           />
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

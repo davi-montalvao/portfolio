@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import { Github,ArrowRight, Star, Code, Globe } from 'lucide-react'
+import { Github, ArrowRight, Star, Code, Globe, Mail } from 'lucide-react'
 import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 
 // Importação direta das imagens
 import jogoDaVelhaImage from "@/assets/jogo-da-velha.png"
@@ -149,6 +150,8 @@ const projects = [
 
 export function Projects() {
   const ref = useRef(null)
+  const { currentLocale } = useLanguageContext()
+  const isEnglish = currentLocale === 'en'
 
   return (
     <section id="portfolio" className="py-24 relative overflow-hidden">
@@ -327,6 +330,36 @@ export function Projects() {
           ))}
         </div>
 
+        {/* Mid-page CTA — English only */}
+        {isEnglish && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="text-center mt-16 mb-4"
+          >
+            <div className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl glass-effect border border-[#ffd95a]/30 max-w-xl mx-auto">
+              <h3 className="text-lg font-semibold text-white">
+                Have a project in mind?
+              </h3>
+              <p className="text-slate-300 text-sm">
+                I&apos;d love to hear from you — reach out by email. I typically reply within 24 hours.
+              </p>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold"
+                asChild
+              >
+                <a href="mailto:drmontalvao@gmail.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Email me
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+        )}
+
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -336,16 +369,16 @@ export function Projects() {
         >
           <div className="inline-flex items-center gap-4 px-8 py-6 rounded-2xl glass-effect border border-white/20">
             <div className="text-center">
-              <TranslatedH2
-                pt="Tem um projeto em mente?"
-                en="Have a project in mind?"
-                className="text-xl font-semibold text-white mb-2"
-              />
-              <TranslatedP
-                pt="Vamos trabalhar juntos para torná-lo realidade!"
-                en="Let's work together to make it a reality!"
-                className="text-slate-300 mb-4"
-              />
+              {isEnglish && (
+                <>
+                  <h2 className="text-xl font-semibold text-white mb-2">
+                    Have a project in mind?
+                  </h2>
+                  <p className="text-slate-300 mb-4">
+                    Let&apos;s work together to make it a reality!
+                  </p>
+                </>
+              )}
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold"

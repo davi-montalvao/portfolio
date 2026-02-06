@@ -1,10 +1,29 @@
-"use client"
+'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Briefcase, Calendar, MapPin, TrendingUp, Award, Users, Code, Database } from 'lucide-react'
-import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import {
+  Briefcase,
+  Calendar,
+  MapPin,
+  TrendingUp,
+  Award,
+  Users,
+  Code,
+  Database,
+} from 'lucide-react';
+import {
+  TranslatedH2,
+  TranslatedP,
+  TranslatedSpan,
+} from '@/components/translated-text/page';
 
 // Função para calcular a diferença de tempo em anos e meses
 function calculateTimeDifference(startMonth: number, startYear: number) {
@@ -25,94 +44,131 @@ function calculateTimeDifference(startMonth: number, startYear: number) {
 const experiences = [
   {
     id: 1,
-    title: "Desenvolvedor Web",
-    company: "TalentFour Consulting",
+    title: 'Desenvolvedor Web',
+    company: 'TalentFour Consulting',
     description: {
-      pt: "Desenvolvedor front-end com expertise em Javascript, ReactJS, HTML, CSS e Redux. Atuo na manutenção e evolução de sites WordPress, gestão de landing pages em Marketing Cloud e criação de soluções de atendimento automatizado para WhatsApp através da plataforma Blip.",
-      en: "Front-end developer with expertise in Javascript, ReactJS, HTML, CSS and Redux. I work on maintaining and evolving WordPress sites, managing landing pages in Marketing Cloud and creating automated WhatsApp customer service solutions through the Blip platform."
+      pt: 'Desenvolvedor front-end com expertise em Javascript, ReactJS, HTML, CSS e Redux. Atuo na manutenção e evolução de sites WordPress, gestão de landing pages em Marketing Cloud e criação de soluções de atendimento automatizado para WhatsApp através da plataforma Blip.',
+      en: 'Front-end developer with expertise in Javascript, ReactJS, HTML, CSS and Redux. I work on maintaining and evolving WordPress sites, managing landing pages in Marketing Cloud and creating automated WhatsApp customer service solutions through the Blip platform.',
     },
     time: calculateTimeDifference(6, 2023),
-    totalTime: "Junho/2023 - Atualmente",
-    location: "São Paulo, SP",
-    type: "Full-time",
-    technologies: ["React", "JavaScript", "WordPress", "Marketing Cloud", "Blip"],
-    achievements: ["Automação de atendimento", "Landing pages responsivas", "Integração de APIs"],
+    totalTime: 'Junho/2023 - Atualmente',
+    location: 'São Paulo, SP',
+    type: 'Full-time',
+    technologies: [
+      'React',
+      'JavaScript',
+      'WordPress',
+      'Marketing Cloud',
+      'Blip',
+    ],
+    achievements: [
+      'Automação de atendimento',
+      'Landing pages responsivas',
+      'Integração de APIs',
+    ],
     icon: Code,
-    color: "from-[#ffd95a] to-[#ff6b6b]"
+    color: 'from-[#ffd95a] to-[#ff6b6b]',
   },
   {
     id: 2,
-    title: "Desenvolvedor Front-end Senior",
-    company: "Sabion Digital",
+    title: 'Desenvolvedor Front-end Senior',
+    company: 'Sabion Digital',
     description: {
-      pt: "Desenvolvimento da área de cartões de crédito com React, Micro Frontend e rollup.js, comunicação com outras áreas e cliente externo, criação da área do usuário em uma aplicação de transporte coletivo, e projeto de inteligência artificial em Gestão de Riscos e Compliance.",
-      en: "Development of the credit card area with React, Micro Frontend and rollup.js, communication with other areas and external clients, creation of the user area in a public transport application, and artificial intelligence project in Risk Management and Compliance."
+      pt: 'Desenvolvimento da área de cartões de crédito com React, Micro Frontend e rollup.js, comunicação com outras áreas e cliente externo, criação da área do usuário em uma aplicação de transporte coletivo, e projeto de inteligência artificial em Gestão de Riscos e Compliance.',
+      en: 'Development of the credit card area with React, Micro Frontend and rollup.js, communication with other areas and external clients, creation of the user area in a public transport application, and artificial intelligence project in Risk Management and Compliance.',
     },
-    time: "3 anos e 3 meses",
-    totalTime: "Março/2020 - Maio/2023",
-    location: "São Paulo, SP",
-    type: "Full-time",
-    technologies: ["React", "Micro Frontend", "rollup.js", "AI/ML", "Compliance"],
-    achievements: ["Sistema de cartões de crédito", "Micro frontend", "IA para gestão de riscos"],
+    time: '3 anos e 3 meses',
+    totalTime: 'Março/2020 - Maio/2023',
+    location: 'São Paulo, SP',
+    type: 'Full-time',
+    technologies: [
+      'React',
+      'Micro Frontend',
+      'rollup.js',
+      'AI/ML',
+      'Compliance',
+    ],
+    achievements: [
+      'Sistema de cartões de crédito',
+      'Micro frontend',
+      'IA para gestão de riscos',
+    ],
     icon: TrendingUp,
-    color: "from-[#4ecdc4] to-[#45b7d1]"
+    color: 'from-[#4ecdc4] to-[#45b7d1]',
   },
   {
     id: 3,
-    title: "Analista Programador Mainframe",
-    company: "Sabion Digital",
+    title: 'Analista Programador Mainframe',
+    company: 'Sabion Digital',
     description: {
-      pt: "Adequações dos sistemas do grupo segurador ao SAP FSCD para as movimentações de contas a pagar, contas a receber, conta demanda judicial/registros legais.",
-      en: "Adaptations of the insurance group systems to SAP FSCD for accounts payable, accounts receivable, judicial demand account/legal records movements."
+      pt: 'Adequações dos sistemas do grupo segurador ao SAP FSCD para as movimentações de contas a pagar, contas a receber, conta demanda judicial/registros legais.',
+      en: 'Adaptations of the insurance group systems to SAP FSCD for accounts payable, accounts receivable, judicial demand account/legal records movements.',
     },
-    time: "1 ano e 9 meses",
-    totalTime: "Junho/2018 - Fev/2020",
-    location: "São Paulo, SP",
-    type: "Full-time",
-    technologies: ["COBOL", "SAP FSCD", "Mainframe", "Sistemas legados"],
-    achievements: ["Migração SAP FSCD", "Sistemas seguradoras", "Processos legais"],
+    time: '1 ano e 9 meses',
+    totalTime: 'Junho/2018 - Fev/2020',
+    location: 'São Paulo, SP',
+    type: 'Full-time',
+    technologies: ['COBOL', 'SAP FSCD', 'Mainframe', 'Sistemas legados'],
+    achievements: [
+      'Migração SAP FSCD',
+      'Sistemas seguradoras',
+      'Processos legais',
+    ],
     icon: Database,
-    color: "from-[#ff6b6b] to-[#ff8e8e]"
+    color: 'from-[#ff6b6b] to-[#ff8e8e]',
   },
   {
     id: 4,
-    title: "Analista Programador Mainframe",
-    company: "Prime IT Solutions",
+    title: 'Analista Programador Mainframe',
+    company: 'Prime IT Solutions',
     description: {
-      pt: "Migração dos dados quando ocorreu a compra do banco HSBC pelo banco Bradesco.",
-      en: "Data migration when HSBC bank was acquired by Bradesco bank."
+      pt: 'Migração dos dados quando ocorreu a compra do banco HSBC pelo banco Bradesco.',
+      en: 'Data migration when HSBC bank was acquired by Bradesco bank.',
     },
-    time: "2 anos e 7 meses",
-    totalTime: "Novembro/2015 - Maio/2018",
-    location: "São Paulo, SP",
-    type: "Full-time",
-    technologies: ["COBOL", "Mainframe", "Migração de dados", "Sistemas bancários"],
-    achievements: ["Migração HSBC → Bradesco", "Sistemas bancários", "Processos de dados"],
+    time: '2 anos e 7 meses',
+    totalTime: 'Novembro/2015 - Maio/2018',
+    location: 'São Paulo, SP',
+    type: 'Full-time',
+    technologies: [
+      'COBOL',
+      'Mainframe',
+      'Migração de dados',
+      'Sistemas bancários',
+    ],
+    achievements: [
+      'Migração HSBC → Bradesco',
+      'Sistemas bancários',
+      'Processos de dados',
+    ],
     icon: Users,
-    color: "from-[#ffd95a] to-[#4ecdc4]"
+    color: 'from-[#ffd95a] to-[#4ecdc4]',
   },
   {
     id: 5,
-    title: "Analista Programador Mainframe",
-    company: "Urcal Projetos e Soluções",
+    title: 'Analista Programador Mainframe',
+    company: 'Urcal Projetos e Soluções',
     description: {
-      pt: "Análise, desenvolvimento e acompanhamento de projetos Cobol no sistema Altamira, incluindo o sistema previdenciário de clientes.",
-      en: "Analysis, development and monitoring of Cobol projects in the Altamira system, including client pension systems."
+      pt: 'Análise, desenvolvimento e acompanhamento de projetos Cobol no sistema Altamira, incluindo o sistema previdenciário de clientes.',
+      en: 'Analysis, development and monitoring of Cobol projects in the Altamira system, including client pension systems.',
     },
-    time: "4 anos e 7 meses",
-    totalTime: "Abril/2011 - Outubro/2015",
-    location: "São Paulo, SP",
-    type: "Full-time",
-    technologies: ["COBOL", "Sistema Altamira", "Previdenciário", "Mainframe"],
-    achievements: ["Sistema previdenciário", "Sistema Altamira", "Projetos COBOL"],
+    time: '4 anos e 7 meses',
+    totalTime: 'Abril/2011 - Outubro/2015',
+    location: 'São Paulo, SP',
+    type: 'Full-time',
+    technologies: ['COBOL', 'Sistema Altamira', 'Previdenciário', 'Mainframe'],
+    achievements: [
+      'Sistema previdenciário',
+      'Sistema Altamira',
+      'Projetos COBOL',
+    ],
     icon: Award,
-    color: "from-[#ff6b6b] to-[#ffd95a]"
+    color: 'from-[#ff6b6b] to-[#ffd95a]',
   },
-]
+];
 
 export function Career() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <section id="carreira" className="py-24 relative overflow-hidden">
@@ -147,8 +203,8 @@ export function Career() {
           />
 
           <TranslatedP
-            pt="Uma jornada de 17+ anos transformando ideias em soluções tecnológicas inovadoras"
-            en="A 17+ year journey transforming ideas into innovative technological solutions"
+            pt="Uma jornada de 18+ anos transformando ideias em soluções tecnológicas inovadoras"
+            en="A 18+ year journey transforming ideas into innovative technological solutions"
             className="text-lg text-slate-300 max-w-2xl mx-auto"
           />
         </motion.div>
@@ -167,8 +223,8 @@ export function Career() {
                 transition={{
                   duration: 0.6,
                   delay: 0.2 + index * 0.1,
-                  type: "spring",
-                  stiffness: 100
+                  type: 'spring',
+                  stiffness: 100,
                 }}
                 className={`relative flex flex-col md:flex-row gap-8 ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
@@ -178,16 +234,24 @@ export function Career() {
                 <div className="absolute left-4 md:left-1/2 top-8 w-4 h-4 bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] rounded-full transform -translate-x-1/2 z-10 hidden md:block" />
 
                 {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                <div
+                  className={`flex-1 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
+                >
                   <Card className="relative overflow-hidden glass-effect border border-white/20 hover:border-white/40 transition-all duration-500 group cursor-pointer">
                     {/* Gradient Border */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${exp.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${exp.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                    />
 
                     <CardHeader className="relative z-10">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
-                          <div className={`p-3 rounded-xl bg-gradient-to-r ${exp.color} bg-opacity-20`}>
-                            <exp.icon className={`h-6 w-6 bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`} />
+                          <div
+                            className={`p-3 rounded-xl bg-gradient-to-r ${exp.color} bg-opacity-20`}
+                          >
+                            <exp.icon
+                              className={`h-6 w-6 bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`}
+                            />
                           </div>
                           <div>
                             <CardTitle className="text-xl font-bold group-hover:text-[#ffd95a] transition-colors duration-300">
@@ -205,7 +269,9 @@ export function Career() {
                             <Calendar className="h-4 w-4" />
                             {exp.time}
                           </div>
-                          <div className="text-sm text-slate-400">{exp.totalTime}</div>
+                          <div className="text-sm text-slate-400">
+                            {exp.totalTime}
+                          </div>
                         </div>
                       </div>
 
@@ -244,7 +310,9 @@ export function Career() {
                               key={tech}
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                              transition={{ delay: 0.4 + index * 0.1 + techIndex * 0.1 }}
+                              transition={{
+                                delay: 0.4 + index * 0.1 + techIndex * 0.1,
+                              }}
                               className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300 border border-white/20"
                             >
                               {tech}
@@ -262,18 +330,23 @@ export function Career() {
                           />
                         </h4>
                         <ul className="space-y-2">
-                          {exp.achievements.map((achievement, achievementIndex) => (
-                            <motion.li
-                              key={achievement}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={isInView ? { opacity: 1, x: 0 } : {}}
-                              transition={{ delay: 0.5 + index * 0.1 + achievementIndex * 0.1 }}
-                              className="flex items-center gap-2 text-sm text-slate-300"
-                            >
-                              <div className="w-2 h-2 bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] rounded-full" />
-                              {achievement}
-                            </motion.li>
-                          ))}
+                          {exp.achievements.map(
+                            (achievement, achievementIndex) => (
+                              <motion.li
+                                key={achievement}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{
+                                  delay:
+                                    0.5 + index * 0.1 + achievementIndex * 0.1,
+                                }}
+                                className="flex items-center gap-2 text-sm text-slate-300"
+                              >
+                                <div className="w-2 h-2 bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] rounded-full" />
+                                {achievement}
+                              </motion.li>
+                            ),
+                          )}
                         </ul>
                       </div>
                     </CardContent>
@@ -293,7 +366,7 @@ export function Career() {
         >
           <div className="inline-flex items-center gap-8 px-8 py-8 rounded-2xl glass-effect border border-white/20">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#ffd95a]">17+</div>
+              <div className="text-3xl font-bold text-[#ffd95a]">18+</div>
               <TranslatedSpan
                 pt="Anos de Experiência"
                 en="Years of Experience"
@@ -331,5 +404,5 @@ export function Career() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

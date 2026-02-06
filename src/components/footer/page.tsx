@@ -1,52 +1,69 @@
-"use client"
+'use client';
 
-import { ArrowUp, Mail, Phone, Github, Linkedin, MessageCircle } from 'lucide-react'
-import Link from "next/link"
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { TranslatedH3, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import {
+  ArrowUp,
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  MessageCircle,
+} from 'lucide-react';
+import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import {
+  TranslatedH3,
+  TranslatedP,
+  TranslatedSpan,
+} from '@/components/translated-text/page';
+import { useLanguageContext } from '@/contexts/LanguageContext';
 
 const socialLinks = [
   {
-    name: "GitHub",
-    url: "https://github.com/davi-montalvao",
+    name: 'GitHub',
+    url: 'https://github.com/davi-montalvao',
     icon: Github,
-    color: "hover:text-[#ffd95a]",
-    description: "Veja meus projetos"
+    color: 'hover:text-[#ffd95a]',
+    description: 'Veja meus projetos',
   },
   {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/davi-montalvao-dev/",
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/davi-montalvao-dev/',
     icon: Linkedin,
-    color: "hover:text-[#4ecdc4]",
-    description: "Conecte-se comigo"
+    color: 'hover:text-[#4ecdc4]',
+    description: 'Conecte-se comigo',
   },
   {
-    name: "WhatsApp",
-    url: "https://api.whatsapp.com/send?phone=5511984117991",
+    name: 'WhatsApp',
+    url: 'https://api.whatsapp.com/send?phone=5511984117991',
     icon: MessageCircle,
-    color: "hover:text-[#ff6b6b]",
-    description: "Conversa direta"
-  }
-]
+    color: 'hover:text-[#ff6b6b]',
+    description: 'Conversa direta',
+  },
+];
 
 const quickLinks = [
-  { name: { pt: "Sobre mim", en: "About me" }, href: "#sobre" },
-  { name: { pt: "Portfólio", en: "Portfolio" }, href: "#portfolio" },
-  { name: { pt: "Skills", en: "Skills" }, href: "#skills" },
-  { name: { pt: "Carreira", en: "Career" }, href: "#carreira" },
-]
+  { name: { pt: 'Sobre mim', en: 'About me' }, href: '#sobre' },
+  { name: { pt: 'Portfólio', en: 'Portfolio' }, href: '#portfolio' },
+  { name: { pt: 'Skills', en: 'Skills' }, href: '#skills' },
+  { name: { pt: 'Carreira', en: 'Career' }, href: '#carreira' },
+];
 
 export function Footer() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { currentLocale } = useLanguageContext();
+  const isEnglish = currentLocale === 'en';
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer id="contato" className="relative border-t border-white/10 py-20 overflow-hidden">
+    <footer
+      id="contato"
+      className="relative border-t border-white/10 py-20 overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-gradient-to-br from-[#ffd95a]/5 to-[#ff6b6b]/5 rounded-full blur-3xl" />
@@ -72,11 +89,13 @@ export function Footer() {
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-[#ffd95a] to-[#ff6b6b] opacity-20 blur-sm" />
               </div>
               <div>
-                <h3 className="text-xl font-bold gradient-text">Davi Montalvão</h3>
-                <p className="text-sm text-slate-400">
+                <h3 className="text-xl font-bold gradient-text">
+                  Davi Montalvão
+                </h3>
+                <p className="text-sm text-slate-400 max-w-xs">
                   <TranslatedSpan
-                    pt="Desenvolvedor Web"
-                    en="Web Developer"
+                    pt="Da robustez do Mainframe às tecnologias modernas como React."
+                    en="From mainframe robustness to modern technologies like React."
                   />
                 </p>
               </div>
@@ -134,10 +153,7 @@ export function Footer() {
                     className="text-slate-300 hover:text-[#ffd95a] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-[#ffd95a] rounded-full group-hover:scale-150 transition-transform duration-300" />
-                    <TranslatedSpan
-                      pt={link.name.pt}
-                      en={link.name.en}
-                    />
+                    <TranslatedSpan pt={link.name.pt} en={link.name.en} />
                   </Link>
                 </motion.div>
               ))}
@@ -156,6 +172,11 @@ export function Footer() {
               en="Get in Touch"
               className="text-lg font-semibold text-white"
             />
+            {isEnglish && (
+              <p className="text-sm text-[#ffd95a] font-medium">
+                Best way to reach me from abroad: email
+              </p>
+            )}
             <div className="space-y-4">
               <motion.a
                 href="mailto:drmontalvao@gmail.com"
@@ -163,14 +184,16 @@ export function Footer() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.5 }}
                 whileHover={{ scale: 1.02, x: 5 }}
-                className="flex items-center gap-3 text-slate-300 hover:text-[#ffd95a] transition-colors duration-300 group"
+                className={`flex items-center gap-3 transition-colors duration-300 group ${isEnglish ? 'rounded-xl border-2 border-[#ffd95a]/50 bg-[#ffd95a]/10 p-3 text-[#ffd95a] hover:border-[#ffd95a] hover:bg-[#ffd95a]/20' : 'text-slate-300 hover:text-[#ffd95a]'}`}
               >
                 <div className="p-2 rounded-lg bg-gradient-to-r from-[#ffd95a]/20 to-[#ff6b6b]/20">
                   <Mail className="h-4 w-4 text-[#ffd95a]" />
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-sm text-slate-400">drmontalvao@gmail.com</p>
+                  <p className="text-sm text-slate-400">
+                    drmontalvao@gmail.com
+                  </p>
                 </div>
               </motion.a>
 
@@ -213,7 +236,12 @@ export function Footer() {
               <TranslatedP
                 pt="Vamos transformar suas ideias em realidade digital!"
                 en="Let's transform your ideas into digital reality!"
-                className="text-slate-300 mb-4"
+                className="text-slate-300 mb-2"
+              />
+              <TranslatedP
+                pt="Prefere email? Respondo em até 24h."
+                en="Prefer email? I typically reply within 24 hours."
+                className="text-sm text-slate-400 mb-4"
               />
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
@@ -221,10 +249,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold transition-all duration-300 hover:scale-105"
                 >
                   <Mail className="h-4 w-4" />
-                  <TranslatedSpan
-                    pt="Enviar Mensagem"
-                    en="Send Message"
-                  />
+                  <TranslatedSpan pt="Enviar Mensagem" en="Send Message" />
                 </a>
                 <a
                   href="https://api.whatsapp.com/send?phone=5511984117991"
@@ -233,10 +258,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  <TranslatedSpan
-                    pt="WhatsApp"
-                    en="WhatsApp"
-                  />
+                  <TranslatedSpan pt="WhatsApp" en="WhatsApp" />
                 </a>
               </div>
             </div>
@@ -254,15 +276,9 @@ export function Footer() {
             <span>Copyright © 2024</span>
             <span className="hidden sm:inline">|</span>
             <span className="flex items-center gap-1">
-              <TranslatedSpan
-                pt="Feito com amor"
-                en="Made with love"
-              />
+              <TranslatedSpan pt="Feito com amor" en="Made with love" />
               💜
-              <TranslatedSpan
-                pt="e persistência"
-                en="and persistence"
-              />
+              <TranslatedSpan pt="e persistência" en="and persistence" />
               🚀
             </span>
           </motion.div>
@@ -277,13 +293,10 @@ export function Footer() {
             className="flex items-center gap-2 px-4 py-2 rounded-lg glass-effect border border-white/20 text-slate-300 hover:text-[#ffd95a] hover:border-[#ffd95a]/50 transition-all duration-300"
           >
             <ArrowUp className="h-4 w-4" />
-            <TranslatedSpan
-              pt="Voltar ao topo"
-              en="Back to top"
-            />
+            <TranslatedSpan pt="Voltar ao topo" en="Back to top" />
           </motion.button>
         </div>
       </div>
     </footer>
-  )
+  );
 }

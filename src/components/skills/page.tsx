@@ -1,88 +1,96 @@
-"use client"
+'use client';
 
-import Image from "next/image"
-import { Card } from "@/components/ui/card"
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Code, Zap, Target, TrendingUp } from 'lucide-react'
-import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
+import Image from 'next/image';
+import { Card } from '@/components/ui/card';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Code, Zap, Target, TrendingUp } from 'lucide-react';
+import {
+  TranslatedH2,
+  TranslatedP,
+  TranslatedSpan,
+} from '@/components/translated-text/page';
 
 const skills = [
   {
-    name: "React",
-    icon: "/icons/react.svg",
-    level: "Avançado",
-    category: "Frontend",
-    description: "Desenvolvimento de interfaces modernas e responsivas"
+    name: 'React',
+    icon: '/icons/react.svg',
+    level: 'Avançado',
+    category: 'Frontend',
+    description: 'Desenvolvimento de interfaces modernas e responsivas',
   },
   {
-    name: "JavaScript",
-    icon: "/icons/javascript.svg",
-    level: "Avançado",
-    category: "Linguagem",
-    description: "Programação funcional e orientada a objetos"
+    name: 'JavaScript',
+    icon: '/icons/javascript.svg',
+    level: 'Avançado',
+    category: 'Linguagem',
+    description: 'Programação funcional e orientada a objetos',
   },
   {
-    name: "TypeScript",
-    icon: "/icons/typescript.svg",
-    level: "Intermediário",
-    category: "Linguagem",
-    description: "Tipagem estática para JavaScript"
+    name: 'TypeScript',
+    icon: '/icons/typescript.svg',
+    level: 'Intermediário',
+    category: 'Linguagem',
+    description: 'Tipagem estática para JavaScript',
   },
   {
-    name: "Next.js",
-    icon: "/icons/next.svg",
-    level: "Avançado",
-    category: "Framework",
-    description: "React framework para produção"
+    name: 'Next.js',
+    icon: '/icons/next.svg',
+    level: 'Avançado',
+    category: 'Framework',
+    description: 'React framework para produção',
   },
   {
-    name: "GitHub",
-    icon: "/icons/github.svg",
-    level: "Avançado",
-    category: "Versionamento",
-    description: "Controle de versão e colaboração"
+    name: 'GitHub',
+    icon: '/icons/github.svg',
+    level: 'Avançado',
+    category: 'Versionamento',
+    description: 'Controle de versão e colaboração',
   },
   {
-    name: "HTML5",
-    icon: "/icons/html5.svg",
-    level: "Avançado",
-    category: "Markup",
-    description: "Estruturação semântica de conteúdo"
+    name: 'HTML5',
+    icon: '/icons/html5.svg',
+    level: 'Avançado',
+    category: 'Markup',
+    description: 'Estruturação semântica de conteúdo',
   },
   {
-    name: "CSS3",
-    icon: "/icons/css3.svg",
-    level: "Avançado",
-    category: "Estilização",
-    description: "Design responsivo e animações"
+    name: 'CSS3',
+    icon: '/icons/css3.svg',
+    level: 'Avançado',
+    category: 'Estilização',
+    description: 'Design responsivo e animações',
   },
   {
-    name: "Sass",
-    icon: "/icons/sass.svg",
-    level: "Intermediário",
-    category: "Pré-processador",
-    description: "CSS com funcionalidades avançadas"
+    name: 'Sass',
+    icon: '/icons/sass.svg',
+    level: 'Intermediário',
+    category: 'Pré-processador',
+    description: 'CSS com funcionalidades avançadas',
   },
   {
-    name: "Node.js",
-    icon: "/icons/node.svg",
-    level: "Intermediário",
-    category: "Backend",
-    description: "JavaScript no servidor"
-  }
-]
+    name: 'Node.js',
+    icon: '/icons/node.svg',
+    level: 'Intermediário',
+    category: 'Backend',
+    description: 'JavaScript no servidor',
+  },
+];
 
 const categories = [
-  { name: "Frontend", icon: Code, color: "from-[#ffd95a] to-[#ff6b6b]" },
-  { name: "Backend", icon: Zap, color: "from-[#4ecdc4] to-[#45b7d1]" },
-  { name: "Linguagens", icon: Target, color: "from-[#ff6b6b] to-[#ff8e8e]" },
-  { name: "Ferramentas", icon: TrendingUp, color: "from-[#ffd95a] to-[#4ecdc4]" },
-]
+  { name: 'Frontend', icon: Code, color: 'from-[#ffd95a] to-[#ff6b6b]' },
+  { name: 'Backend', icon: Zap, color: 'from-[#4ecdc4] to-[#45b7d1]' },
+  { name: 'Linguagens', icon: Target, color: 'from-[#ff6b6b] to-[#ff8e8e]' },
+  {
+    name: 'Ferramentas',
+    icon: TrendingUp,
+    color: 'from-[#ffd95a] to-[#4ecdc4]',
+  },
+];
 
 export function Skills() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
@@ -139,7 +147,9 @@ export function Skills() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-white/20 cursor-pointer hover:border-white/40 transition-all duration-300"
             >
-              <category.icon className={`h-4 w-4 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`} />
+              <category.icon
+                className={`h-4 w-4 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}
+              />
               <TranslatedSpan
                 pt={category.name}
                 en={category.name}
@@ -159,13 +169,13 @@ export function Skills() {
               transition={{
                 duration: 0.5,
                 delay: 0.4 + index * 0.1,
-                type: "spring",
-                stiffness: 100
+                type: 'spring',
+                stiffness: 100,
               }}
               whileHover={{
                 y: -8,
                 scale: 1.05,
-                transition: { duration: 0.2 }
+                transition: { duration: 0.2 },
               }}
               className="group"
             >
@@ -232,7 +242,7 @@ export function Skills() {
         >
           <div className="inline-flex items-center gap-4 px-8 py-6 rounded-2xl glass-effect border border-white/20">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#ffd95a]">17+</div>
+              <div className="text-3xl font-bold text-[#ffd95a]">18+</div>
               <TranslatedSpan
                 pt="Anos de Experiência"
                 en="Years of Experience"
@@ -261,5 +271,5 @@ export function Skills() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

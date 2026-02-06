@@ -12,15 +12,25 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [currentLocale, setCurrentLocale] = useState<Locale>('pt')
+/** Server-computed locale: from cookie (user choice) or from geo (outside BR → en). */
+export function LanguageProvider({
+  children,
+  initialLocale,
+}: {
+  children: ReactNode
+  initialLocale?: Locale | null
+}) {
+  const [currentLocale, setCurrentLocale] = useState<Locale>(
+    initialLocale && locales.includes(initialLocale) ? initialLocale : 'pt'
+  )
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Get saved locale from localStorage
-    const savedLocale = localStorage.getItem('locale') as Locale
+    const savedLocale = localStorage.getItem('locale') as Locale | null
     if (savedLocale && locales.includes(savedLocale)) {
       setCurrentLocale(savedLocale)
+    } else {
+      localStorage.setItem('locale', currentLocale)
     }
     setIsLoading(false)
   }, [])
@@ -29,8 +39,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (locales.includes(locale)) {
       setCurrentLocale(locale)
       localStorage.setItem('locale', locale)
-
-      // Reload page to apply new locale
+      document.cookie = `locale=${locale};path=/;max-age=31536000;sameSite=lax`
       window.location.reload()
     }
   }
