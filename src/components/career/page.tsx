@@ -24,142 +24,152 @@ import {
   TranslatedP,
   TranslatedSpan,
 } from '@/components/translated-text/page';
+import { useLanguageContext } from '@/contexts/LanguageContext';
 
-// Função para calcular a diferença de tempo em anos e meses
 function calculateTimeDifference(startMonth: number, startYear: number) {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
-
   const totalMonthsCurrent = currentYear * 12 + currentMonth;
   const totalMonthsStart = startYear * 12 + startMonth;
-
   const diffMonths = totalMonthsCurrent - totalMonthsStart;
   const years = Math.floor(diffMonths / 12);
   const months = diffMonths % 12;
-
-  return `${years} ano${years !== 1 ? 's' : ''} e ${months} mes${months !== 1 ? 'es' : ''}`;
+  return {
+    pt: `${years} ano${years !== 1 ? 's' : ''} e ${months} mes${months !== 1 ? 'es' : ''}`,
+    en: `${years} year${years !== 1 ? 's' : ''} and ${months} month${months !== 1 ? 's' : ''}`,
+  };
 }
 
 const experiences = [
   {
     id: 1,
-    title: 'Desenvolvedor Web',
+    title: { pt: 'Desenvolvedor Web', en: 'Web Developer' },
     company: 'TalentFour Consulting',
     description: {
       pt: 'Desenvolvedor front-end com expertise em Javascript, ReactJS, HTML, CSS e Redux. Atuo na manutenção e evolução de sites WordPress, gestão de landing pages em Marketing Cloud e criação de soluções de atendimento automatizado para WhatsApp através da plataforma Blip.',
       en: 'Front-end developer with expertise in Javascript, ReactJS, HTML, CSS and Redux. I work on maintaining and evolving WordPress sites, managing landing pages in Marketing Cloud and creating automated WhatsApp customer service solutions through the Blip platform.',
     },
     time: calculateTimeDifference(6, 2023),
-    totalTime: 'Junho/2023 - Atualmente',
+    totalTime: { pt: 'Junho/2023 - Atualmente', en: 'June/2023 - Present' },
     location: 'São Paulo, SP',
-    type: 'Full-time',
+    type: { pt: 'Tempo integral', en: 'Full-time' },
     technologies: [
-      'React',
-      'JavaScript',
-      'WordPress',
-      'Marketing Cloud',
-      'Blip',
+      { pt: 'React', en: 'React' },
+      { pt: 'JavaScript', en: 'JavaScript' },
+      { pt: 'WordPress', en: 'WordPress' },
+      { pt: 'Marketing Cloud', en: 'Marketing Cloud' },
+      { pt: 'Blip', en: 'Blip' },
     ],
     achievements: [
-      'Automação de atendimento',
-      'Landing pages responsivas',
-      'Integração de APIs',
+      { pt: 'Automação de atendimento', en: 'Customer service automation' },
+      { pt: 'Landing pages responsivas', en: 'Responsive landing pages' },
+      { pt: 'Integração de APIs', en: 'API integration' },
     ],
     icon: Code,
     color: 'from-[#ffd95a] to-[#ff6b6b]',
   },
   {
     id: 2,
-    title: 'Desenvolvedor Front-end Senior',
+    title: { pt: 'Desenvolvedor Front-end Senior', en: 'Senior Front-end Developer' },
     company: 'Sabion Digital',
     description: {
       pt: 'Desenvolvimento da área de cartões de crédito com React, Micro Frontend e rollup.js, comunicação com outras áreas e cliente externo, criação da área do usuário em uma aplicação de transporte coletivo, e projeto de inteligência artificial em Gestão de Riscos e Compliance.',
       en: 'Development of the credit card area with React, Micro Frontend and rollup.js, communication with other areas and external clients, creation of the user area in a public transport application, and artificial intelligence project in Risk Management and Compliance.',
     },
-    time: '3 anos e 3 meses',
-    totalTime: 'Março/2020 - Maio/2023',
+    time: { pt: '3 anos e 3 meses', en: '3 years and 3 months' },
+    totalTime: { pt: 'Março/2020 - Maio/2023', en: 'March/2020 - May/2023' },
     location: 'São Paulo, SP',
-    type: 'Full-time',
+    type: { pt: 'Tempo integral', en: 'Full-time' },
     technologies: [
-      'React',
-      'Micro Frontend',
-      'rollup.js',
-      'AI/ML',
-      'Compliance',
+      { pt: 'React', en: 'React' },
+      { pt: 'Micro Frontend', en: 'Micro Frontend' },
+      { pt: 'rollup.js', en: 'rollup.js' },
+      { pt: 'AI/ML', en: 'AI/ML' },
+      { pt: 'Compliance', en: 'Compliance' },
     ],
     achievements: [
-      'Sistema de cartões de crédito',
-      'Micro frontend',
-      'IA para gestão de riscos',
+      { pt: 'Sistema de cartões de crédito', en: 'Credit card system' },
+      { pt: 'Micro frontend', en: 'Micro frontend' },
+      { pt: 'IA para gestão de riscos', en: 'AI for risk management' },
     ],
     icon: TrendingUp,
     color: 'from-[#4ecdc4] to-[#45b7d1]',
   },
   {
     id: 3,
-    title: 'Analista Programador Mainframe',
+    title: { pt: 'Analista Programador Mainframe', en: 'Mainframe Programmer Analyst' },
     company: 'Sabion Digital',
     description: {
       pt: 'Adequações dos sistemas do grupo segurador ao SAP FSCD para as movimentações de contas a pagar, contas a receber, conta demanda judicial/registros legais.',
       en: 'Adaptations of the insurance group systems to SAP FSCD for accounts payable, accounts receivable, judicial demand account/legal records movements.',
     },
-    time: '1 ano e 9 meses',
-    totalTime: 'Junho/2018 - Fev/2020',
+    time: { pt: '1 ano e 9 meses', en: '1 year and 9 months' },
+    totalTime: { pt: 'Junho/2018 - Fev/2020', en: 'June/2018 - Feb/2020' },
     location: 'São Paulo, SP',
-    type: 'Full-time',
-    technologies: ['COBOL', 'SAP FSCD', 'Mainframe', 'Sistemas legados'],
+    type: { pt: 'Tempo integral', en: 'Full-time' },
+    technologies: [
+      { pt: 'COBOL', en: 'COBOL' },
+      { pt: 'SAP FSCD', en: 'SAP FSCD' },
+      { pt: 'Mainframe', en: 'Mainframe' },
+      { pt: 'Sistemas legados', en: 'Legacy systems' },
+    ],
     achievements: [
-      'Migração SAP FSCD',
-      'Sistemas seguradoras',
-      'Processos legais',
+      { pt: 'Migração SAP FSCD', en: 'SAP FSCD migration' },
+      { pt: 'Sistemas seguradoras', en: 'Insurance systems' },
+      { pt: 'Processos legais', en: 'Legal processes' },
     ],
     icon: Database,
     color: 'from-[#ff6b6b] to-[#ff8e8e]',
   },
   {
     id: 4,
-    title: 'Analista Programador Mainframe',
+    title: { pt: 'Analista Programador Mainframe', en: 'Mainframe Programmer Analyst' },
     company: 'Prime IT Solutions',
     description: {
       pt: 'Migração dos dados quando ocorreu a compra do banco HSBC pelo banco Bradesco.',
       en: 'Data migration when HSBC bank was acquired by Bradesco bank.',
     },
-    time: '2 anos e 7 meses',
-    totalTime: 'Novembro/2015 - Maio/2018',
+    time: { pt: '2 anos e 7 meses', en: '2 years and 7 months' },
+    totalTime: { pt: 'Novembro/2015 - Maio/2018', en: 'November/2015 - May/2018' },
     location: 'São Paulo, SP',
-    type: 'Full-time',
+    type: { pt: 'Tempo integral', en: 'Full-time' },
     technologies: [
-      'COBOL',
-      'Mainframe',
-      'Migração de dados',
-      'Sistemas bancários',
+      { pt: 'COBOL', en: 'COBOL' },
+      { pt: 'Mainframe', en: 'Mainframe' },
+      { pt: 'Migração de dados', en: 'Data migration' },
+      { pt: 'Sistemas bancários', en: 'Banking systems' },
     ],
     achievements: [
-      'Migração HSBC → Bradesco',
-      'Sistemas bancários',
-      'Processos de dados',
+      { pt: 'Migração HSBC → Bradesco', en: 'HSBC → Bradesco migration' },
+      { pt: 'Sistemas bancários', en: 'Banking systems' },
+      { pt: 'Processos de dados', en: 'Data processes' },
     ],
     icon: Users,
     color: 'from-[#ffd95a] to-[#4ecdc4]',
   },
   {
     id: 5,
-    title: 'Analista Programador Mainframe',
+    title: { pt: 'Analista Programador Mainframe', en: 'Mainframe Programmer Analyst' },
     company: 'Urcal Projetos e Soluções',
     description: {
       pt: 'Análise, desenvolvimento e acompanhamento de projetos Cobol no sistema Altamira, incluindo o sistema previdenciário de clientes.',
       en: 'Analysis, development and monitoring of Cobol projects in the Altamira system, including client pension systems.',
     },
-    time: '4 anos e 7 meses',
-    totalTime: 'Abril/2011 - Outubro/2015',
+    time: { pt: '4 anos e 7 meses', en: '4 years and 7 months' },
+    totalTime: { pt: 'Abril/2011 - Outubro/2015', en: 'April/2011 - October/2015' },
     location: 'São Paulo, SP',
-    type: 'Full-time',
-    technologies: ['COBOL', 'Sistema Altamira', 'Previdenciário', 'Mainframe'],
+    type: { pt: 'Tempo integral', en: 'Full-time' },
+    technologies: [
+      { pt: 'COBOL', en: 'COBOL' },
+      { pt: 'Sistema Altamira', en: 'Altamira system' },
+      { pt: 'Previdenciário', en: 'Pension' },
+      { pt: 'Mainframe', en: 'Mainframe' },
+    ],
     achievements: [
-      'Sistema previdenciário',
-      'Sistema Altamira',
-      'Projetos COBOL',
+      { pt: 'Sistema previdenciário', en: 'Pension system' },
+      { pt: 'Sistema Altamira', en: 'Altamira system' },
+      { pt: 'Projetos COBOL', en: 'COBOL projects' },
     ],
     icon: Award,
     color: 'from-[#ff6b6b] to-[#ffd95a]',
@@ -169,6 +179,8 @@ const experiences = [
 export function Career() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { currentLocale } = useLanguageContext();
+  const locale = currentLocale === 'en' ? 'en' : 'pt';
 
   return (
     <section id="carreira" className="py-24 relative overflow-hidden">
@@ -255,7 +267,7 @@ export function Career() {
                           </div>
                           <div>
                             <CardTitle className="text-xl font-bold group-hover:text-[#ffd95a] transition-colors duration-300">
-                              {exp.title}
+                              {exp.title[locale]}
                             </CardTitle>
                             <div className="flex items-center gap-2 text-[#ffd95a] font-semibold">
                               <Briefcase className="h-4 w-4" />
@@ -267,10 +279,10 @@ export function Career() {
                         <div className="text-right">
                           <div className="flex items-center gap-2 text-[#ff6b6b] font-semibold">
                             <Calendar className="h-4 w-4" />
-                            {exp.time}
+                            {exp.time[locale]}
                           </div>
                           <div className="text-sm text-slate-400">
-                            {exp.totalTime}
+                            {exp.totalTime[locale]}
                           </div>
                         </div>
                       </div>
@@ -282,7 +294,7 @@ export function Career() {
                         </div>
                         <div className="flex items-center gap-1">
                           <span className="px-2 py-1 rounded-full bg-white/10 text-xs">
-                            {exp.type}
+                            {exp.type[locale]}
                           </span>
                         </div>
                       </div>
@@ -307,7 +319,7 @@ export function Career() {
                         <div className="flex flex-wrap gap-2">
                           {exp.technologies.map((tech, techIndex) => (
                             <motion.span
-                              key={tech}
+                              key={typeof tech === 'object' ? tech[locale] : tech}
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={isInView ? { opacity: 1, scale: 1 } : {}}
                               transition={{
@@ -315,7 +327,7 @@ export function Career() {
                               }}
                               className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300 border border-white/20"
                             >
-                              {tech}
+                              {typeof tech === 'object' ? tech[locale] : tech}
                             </motion.span>
                           ))}
                         </div>
@@ -333,7 +345,7 @@ export function Career() {
                           {exp.achievements.map(
                             (achievement, achievementIndex) => (
                               <motion.li
-                                key={achievement}
+                                key={typeof achievement === 'object' ? achievement[locale] : achievement}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{
@@ -343,7 +355,7 @@ export function Career() {
                                 className="flex items-center gap-2 text-sm text-slate-300"
                               >
                                 <div className="w-2 h-2 bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] rounded-full" />
-                                {achievement}
+                                {typeof achievement === 'object' ? achievement[locale] : achievement}
                               </motion.li>
                             ),
                           )}
