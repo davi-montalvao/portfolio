@@ -129,7 +129,7 @@ export function Hero() {
 
             {/* Description */}
             <TranslatedP
-              pt="Com 17 anos de experiência no setor de tecnologia, sendo 12 anos dedicados ao desenvolvimento em Cobol para mainframe e 6 anos no desenvolvimento de soluções web e mobile, sou apaixonado por criar soluções inovadoras que atendem às necessidades dos usuários."
+              pt="Com 18 anos de experiência no setor de tecnologia, sendo 12 anos dedicados ao desenvolvimento em Cobol para mainframe e 6 anos no desenvolvimento de soluções web e mobile, sou apaixonado por criar soluções inovadoras que atendem às necessidades dos usuários."
               en="With 18+ years of experience in the technology sector, including 12 years dedicated to Cobol development for mainframes and 6 years in web and mobile development, I'm passionate about creating innovative solutions that meet user needs."
               className="text-lg leading-relaxed text-slate-300 max-w-2xl"
             />
@@ -168,7 +168,11 @@ export function Hero() {
               )}
               <Button
                 size="lg"
-                className={isEnglish ? 'border-white/20 text-white hover:bg-white/10 backdrop-blur-sm' : 'bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold group'}
+                className={
+                  isEnglish
+                    ? 'border-white/20 text-white hover:bg-white/10 backdrop-blur-sm'
+                    : 'bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold group'
+                }
                 asChild
               >
                 <a
