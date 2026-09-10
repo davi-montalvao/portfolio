@@ -1,157 +1,167 @@
-"use client"
+'use client';
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion } from 'framer-motion'
-import { useRef } from 'react'
-import { Github, ArrowRight, Star, Code, Globe, Mail } from 'lucide-react'
-import { TranslatedH2, TranslatedP, TranslatedSpan } from "@/components/translated-text/page"
-import { useLanguageContext } from "@/contexts/LanguageContext"
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { Github, ArrowRight, Star, Code, Globe, Mail } from 'lucide-react';
+import {
+  TranslatedH2,
+  TranslatedP,
+  TranslatedSpan,
+} from '@/components/translated-text/page';
+import { useLanguageContext } from '@/contexts/LanguageContext';
 
 // Importação direta das imagens
-import jogoDaVelhaImage from "@/assets/jogo-da-velha.png"
-import portfolioImage from "@/assets/leiaute-web.jpeg"
-import dtMoneyImage from "@/assets/dt-money.png"
-import marvelImage from "@/assets/marvel.png"
-import batmanImage from "@/assets/batman.jpeg"
-import starWars from "@/assets/star-wars.png"
-import footballTeamsImage from "@/assets/football-teams.png"
-import buscaCineImage from "@/assets/busca-cine.jpeg"
-import plenarteBalletImage from "@/assets/plenarte-ballet.png"
+import plenarteBalletFitnessImage from '@/assets/plenarte-fitness.png';
+import dtMoneyImage from '@/assets/dt-money.png';
+import marvelImage from '@/assets/marvel.png';
+import batmanImage from '@/assets/batman.jpeg';
+import starWars from '@/assets/star-wars.png';
+import buscaCineImage from '@/assets/busca-cine.jpeg';
+import plenarteBalletImage from '@/assets/plenarte-ballet.png';
 
 const categories = [
-  { name: { pt: "Todos", en: "All" }, value: "all", color: "from-[#ffd95a] to-[#ff6b6b]" },
-  { name: { pt: "Frontend", en: "Frontend" }, value: "frontend", color: "from-[#4ecdc4] to-[#45b7d1]" },
-  { name: { pt: "Games", en: "Games" }, value: "games", color: "from-[#ff6b6b] to-[#ff8e8e]" },
-  { name: { pt: "APIs", en: "APIs" }, value: "apis", color: "from-[#ffd95a] to-[#4ecdc4]" },
-]
+  {
+    name: { pt: 'Todos', en: 'All' },
+    value: 'all',
+    color: 'from-[#ffd95a] to-[#ff6b6b]',
+  },
+  {
+    name: { pt: 'Frontend', en: 'Frontend' },
+    value: 'frontend',
+    color: 'from-[#4ecdc4] to-[#45b7d1]',
+  },
+  {
+    name: { pt: 'Games', en: 'Games' },
+    value: 'games',
+    color: 'from-[#ff6b6b] to-[#ff8e8e]',
+  },
+  {
+    name: { pt: 'APIs', en: 'APIs' },
+    value: 'apis',
+    color: 'from-[#ffd95a] to-[#4ecdc4]',
+  },
+];
 
 const projects = [
   {
-    title: "Plenarte Ballet",
+    title: 'Plenarte Ballet',
     description: {
-      pt: "Escola Plenarte Ballet é um espaço dedicado ao ensino do ballet clássico com excelência, arte e propósito.",
-      en: "Plenarte Ballet School is a space dedicated to teaching classical ballet with excellence, artistry, and purpose."
+      pt: 'Escola Plenarte Ballet é um espaço dedicado ao ensino do ballet clássico com excelência, arte e propósito.',
+      en: 'Plenarte Ballet School is a space dedicated to teaching classical ballet with excellence, artistry, and purpose.',
     },
     image: plenarteBalletImage,
-    github: "https://github.com/davi-montalvao/plenart-ballet",
-    site: "https://www.plenarteballet.com.br/",
-    technologies: ["React", "TypeScript", "CSS3", "Responsivo"],
+    github: 'https://github.com/davi-montalvao/plenart-ballet',
+    site: 'https://www.plenarteballet.com.br/',
+    technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
     featured: true,
-    category: "Frontend"
+    category: 'Frontend',
   },
   {
-    title: "Batman Universe",
+    title: 'Batman Universe',
     description: {
-      pt: "Explore o mundo obscuro e complexo do Batman, de personagens icônicos a locais lendários. Interface moderna com design responsivo.",
-      en: "Explore the dark and complex world of Batman, from iconic characters to legendary locations. Modern interface with responsive design."
+      pt: 'Explore o mundo obscuro e complexo do Batman, de personagens icônicos a locais lendários. Interface moderna com design responsivo.',
+      en: 'Explore the dark and complex world of Batman, from iconic characters to legendary locations. Modern interface with responsive design.',
     },
     image: batmanImage,
-    github: "https://github.com/davi-montalvao/Universe-Batman",
-    site: "https://universe-batman.vercel.app/",
-    technologies: ["React", "TypeScript", "CSS3", "Responsivo"],
+    github: 'https://github.com/davi-montalvao/Universe-Batman',
+    site: 'https://universe-batman.vercel.app/',
+    technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
     featured: true,
-    category: "Frontend"
+    category: 'Frontend',
   },
   {
-    title: "Jogo da Velha",
+    title: 'Plenarte Fitness',
     description: {
-      pt: "Jogo de estratégia simples e popular, jogado em um tabuleiro de 3x3, onde dois jogadores, X e O, alternam-se para marcar suas respectivas jogadas.",
-      en: "Simple and popular strategy game, played on a 3x3 board, where two players, X and O, take turns to mark their respective moves."
+      pt: 'Curso online que combina a técnica e a elegância do ballet com exercícios de força, condicionamento e mobilidade.',
+      en: 'An online course that combines the technique and elegance of ballet with strength, conditioning, and mobility exercises.',
     },
-    image: jogoDaVelhaImage,
-    github: "https://github.com/davi-montalvao/jogo-da-velha",
-    site: "https://jogo-da-velha-nu-olive.vercel.app/",
-    technologies: ["JavaScript", "HTML5", "CSS3", "Game"],
+    image: plenarteBalletFitnessImage,
+    github: 'https://github.com/davi-montalvao/plenarte-fitness',
+    site: 'https://www.plenartefitness.com.br/',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Motion',
+      'Next.js API Routes',
+      'Auth.js',
+      'Prisma',
+      'PostgreSQL / Neon',
+      'bcryptjs',
+      'Zod',
+      'Mercado Pago',
+    ],
     featured: false,
-    category: "Game"
+    category: ['Frontend', '-', 'Backend'],
   },
   {
-    title: "Star Wars Explorer",
+    title: 'Star Wars Explorer',
     description: {
-      pt: "Interface para explorar informações detalhadas sobre o universo de Star Wars. Os usuários podem navegar por diferentes categorias de personagens, locais e veículos.",
-      en: "Interface to explore detailed information about the Star Wars universe. Users can navigate through different categories of characters, locations and vehicles."
+      pt: 'Interface para explorar informações detalhadas sobre o universo de Star Wars. Os usuários podem navegar por diferentes categorias de personagens, locais e veículos.',
+      en: 'Interface to explore detailed information about the Star Wars universe. Users can navigate through different categories of characters, locations and vehicles.',
     },
     image: starWars,
-    github: "https://github.com/davi-montalvao/star-wars",
-    site: "https://star-wars-taupe-eta.vercel.app/",
-    technologies: ["React", "API", "Styled Components", "Responsivo"],
+    github: 'https://github.com/davi-montalvao/star-wars',
+    site: 'https://star-wars-taupe-eta.vercel.app/',
+    technologies: ['React', 'API', 'Styled Components', 'Responsivo'],
     featured: true,
-    category: "Frontend"
+    category: 'Frontend',
   },
   {
-    title: "Portfólio Profissional",
-    description: {
-      pt: "Aplicação portfolio é uma apresentação concisa e impactante sobre minhas experiências, habilidades e projetos. Feito com componentes React, Typescript e Sass.",
-      en: "Portfolio application is a concise and impactful presentation about my experiences, skills and projects. Made with React components, TypeScript and Sass."
-    },
-    image: portfolioImage,
-    github: "https://github.com/davi-montalvao/portfolio",
-    site: "https://www.davimontalvao.com.br/",
-    technologies: ["React", "TypeScript", "Sass", "Responsivo"],
-    featured: true,
-    category: "Portfolio"
-  },
-  {
-    title: "DT Money",
+    title: 'DT Money',
     description: {
       pt: "Aplicação de controle financeiro desenvolvida utilizando React.js, que faz parte do segundo capítulo do módulo 'Ignite' da escola Rocktseat.",
-      en: "Financial control application developed using React.js, which is part of the second chapter of the 'Ignite' module from Rocktseat school."
+      en: "Financial control application developed using React.js, which is part of the second chapter of the 'Ignite' module from Rocktseat school.",
     },
     image: dtMoneyImage,
-    github: "https://github.com/davi-montalvao/dt-money",
-    site: "https://dt-money-phi-self.vercel.app/",
-    technologies: ["React", "TypeScript", "Styled Components", "Financeiro"],
+    github: 'https://github.com/davi-montalvao/dt-money',
+    site: 'https://dt-money-phi-self.vercel.app/',
+    technologies: ['React', 'TypeScript', 'Styled Components', 'Financeiro'],
     featured: false,
-    category: "Financeiro"
+    category: 'Financeiro',
   },
   {
-    title: "Marvel Comics",
+    title: 'Marvel Comics',
     description: {
-      pt: "Site de busca de quadrinhos usando a API da Marvel. Feito com componentes React, TypeScript e Styled Components.",
-      en: "Comic search site using the Marvel API. Made with React components, TypeScript and Styled Components."
+      pt: 'Site de busca de quadrinhos usando a API da Marvel. Feito com componentes React, TypeScript e Styled Components.',
+      en: 'Comic search site using the Marvel API. Made with React components, TypeScript and Styled Components.',
     },
     image: marvelImage,
-    github: "https://github.com/davi-montalvao/marvel",
-    site: "https://marvel-black-six.vercel.app/",
-    technologies: ["React", "TypeScript", "API", "Comics"],
+    github: 'https://github.com/davi-montalvao/marvel',
+    site: 'https://marvel-black-six.vercel.app/',
+    technologies: ['React', 'TypeScript', 'API', 'Comics'],
     featured: false,
-    category: "Entertainment"
+    category: 'Entertainment',
   },
   {
-    title: "Football Teams",
+    title: 'Busca Cine',
     description: {
-      pt: "Aplicativo web para formar times de futebol balanceados automaticamente. Suporta Futsal, Society e Campo com diferentes posições e sistema de avaliação de habilidades.",
-      en: "Web application to automatically form balanced football teams. Supports Futsal, Society and Field with different positions and skill rating system."
-    },
-    image: footballTeamsImage,
-    github: "https://github.com/davi-montalvao/football-teams",
-    site: "https://football-teams-six.vercel.app/",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    featured: true,
-    category: "Frontend"
-  }
-  ,
-  {
-    title: "Busca Cine",
-    description: {
-      pt: "Site de busca de filmes com informações, trailers e detalhes de exibição. Interface limpa e responsiva para encontrar filmes rapidamente.",
-      en: "Movie search site with information, trailers and screening details. Clean, responsive interface to find films quickly."
+      pt: 'Site de busca de filmes com informações, trailers e detalhes de exibição. Interface limpa e responsiva para encontrar filmes rapidamente.',
+      en: 'Movie search site with information, trailers and screening details. Clean, responsive interface to find films quickly.',
     },
     image: buscaCineImage,
-    github: "https://github.com/davi-montalvao/buscacine",
-    site: "https://buscacine-i8v2.vercel.app/",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    github: 'https://github.com/davi-montalvao/buscacine',
+    site: 'https://buscacine-i8v2.vercel.app/',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     featured: false,
-    category: "Frontend"
-  }
-]
+    category: 'Frontend',
+  },
+];
 
 export function Projects() {
-  const ref = useRef(null)
-  const { currentLocale } = useLanguageContext()
-  const isEnglish = currentLocale === 'en'
+  const ref = useRef(null);
+  const { currentLocale } = useLanguageContext();
+  const isEnglish = currentLocale === 'en';
 
   return (
     <section id="portfolio" className="py-24 relative overflow-hidden">
@@ -172,7 +182,11 @@ export function Projects() {
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-effect border border-white/20 mb-6">
             <Code className="h-5 w-5 text-[#ffd95a]" />
-            <TranslatedSpan pt="Meus Trabalhos" en="My Work" className="text-sm text-slate-300" />
+            <TranslatedSpan
+              pt="Meus Trabalhos"
+              en="My Work"
+              className="text-sm text-slate-300"
+            />
           </div>
 
           <TranslatedH2
@@ -204,7 +218,9 @@ export function Projects() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-white/20 cursor-pointer hover:border-white/40 transition-all duration-300"
             >
-              <span className={`text-sm bg-gradient-to-r ${category.color} bg-clip-text text-transparent font-medium`}>
+              <span
+                className={`text-sm bg-gradient-to-r ${category.color} bg-clip-text text-transparent font-medium`}
+              >
                 <TranslatedSpan pt={category.name.pt} en={category.name.en} />
               </span>
             </motion.div>
@@ -221,12 +237,12 @@ export function Projects() {
               transition={{
                 duration: 0.6,
                 delay: 0.4 + index * 0.1,
-                type: "spring",
-                stiffness: 100
+                type: 'spring',
+                stiffness: 100,
               }}
               whileHover={{
                 y: -8,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               className="group"
             >
@@ -275,7 +291,10 @@ export function Projects() {
                     </div>
 
                     <CardDescription className="text-slate-300 leading-relaxed">
-                      <TranslatedSpan pt={project.description.pt} en={project.description.en} />
+                      <TranslatedSpan
+                        pt={project.description.pt}
+                        en={project.description.en}
+                      />
                     </CardDescription>
                   </div>
 
@@ -286,7 +305,9 @@ export function Projects() {
                         key={tech}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.6 + index * 0.1 + techIndex * 0.1 }}
+                        transition={{
+                          delay: 0.6 + index * 0.1 + techIndex * 0.1,
+                        }}
                         className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300 border border-white/20"
                       >
                         {tech}
@@ -343,7 +364,8 @@ export function Projects() {
                 Have a project in mind?
               </h3>
               <p className="text-slate-300 text-sm">
-                I&apos;d love to hear from you — reach out by email. I typically reply within 24 hours.
+                I&apos;d love to hear from you — reach out by email. I typically
+                reply within 24 hours.
               </p>
               <Button
                 size="lg"
@@ -394,5 +416,5 @@ export function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
