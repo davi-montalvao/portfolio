@@ -53,39 +53,12 @@ const categories = [
 
 const projects = [
   {
-    title: 'Plenarte Ballet',
-    description: {
-      pt: 'Escola Plenarte Ballet é um espaço dedicado ao ensino do ballet clássico com excelência, arte e propósito.',
-      en: 'Plenarte Ballet School is a space dedicated to teaching classical ballet with excellence, artistry, and purpose.',
-    },
-    image: plenarteBalletImage,
-    github: 'https://github.com/davi-montalvao/plenart-ballet',
-    site: 'https://www.plenarteballet.com.br/',
-    technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
-    featured: true,
-    category: 'Frontend',
-  },
-  {
-    title: 'Batman Universe',
-    description: {
-      pt: 'Explore o mundo obscuro e complexo do Batman, de personagens icônicos a locais lendários. Interface moderna com design responsivo.',
-      en: 'Explore the dark and complex world of Batman, from iconic characters to legendary locations. Modern interface with responsive design.',
-    },
-    image: batmanImage,
-    github: 'https://github.com/davi-montalvao/Universe-Batman',
-    site: 'https://universe-batman.vercel.app/',
-    technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
-    featured: true,
-    category: 'Frontend',
-  },
-  {
     title: 'Plenarte Fitness',
     description: {
       pt: 'Curso online que combina a técnica e a elegância do ballet com exercícios de força, condicionamento e mobilidade.',
       en: 'An online course that combines the technique and elegance of ballet with strength, conditioning, and mobility exercises.',
     },
     image: plenarteBalletFitnessImage,
-    github: 'https://github.com/davi-montalvao/plenarte-fitness',
     site: 'https://www.plenartefitness.com.br/',
     technologies: [
       'Next.js',
@@ -101,8 +74,33 @@ const projects = [
       'Zod',
       'Mercado Pago',
     ],
-    featured: false,
+    featured: true,
     category: ['Frontend', '-', 'Backend'],
+  },
+  {
+    title: 'Plenarte Ballet',
+    description: {
+      pt: 'Escola Plenarte Ballet é um espaço dedicado ao ensino do ballet clássico com excelência, arte e propósito.',
+      en: 'Plenarte Ballet School is a space dedicated to teaching classical ballet with excellence, artistry, and purpose.',
+    },
+    image: plenarteBalletImage,
+    site: 'https://www.plenarteballet.com.br/',
+    technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
+    featured: true,
+    category: 'Frontend',
+  },
+  {
+    title: 'Batman Universe',
+    description: {
+      pt: 'Explore o mundo obscuro e complexo do Batman, de personagens icônicos a locais lendários. Interface moderna com design responsivo.',
+      en: 'Explore the dark and complex world of Batman, from iconic characters to legendary locations. Modern interface with responsive design.',
+    },
+    image: batmanImage,
+    github: 'https://github.com/davi-montalvao/Universe-Batman',
+    site: 'https://universe-batman.vercel.app/',
+    technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
+    featured: false,
+    category: 'Frontend',
   },
   {
     title: 'Star Wars Explorer',
@@ -114,7 +112,7 @@ const projects = [
     github: 'https://github.com/davi-montalvao/star-wars',
     site: 'https://star-wars-taupe-eta.vercel.app/',
     technologies: ['React', 'API', 'Styled Components', 'Responsivo'],
-    featured: true,
+    featured: false,
     category: 'Frontend',
   },
   {
@@ -317,22 +315,26 @@ export function Projects() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-2">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 group cursor-pointer"
-                    >
-                      <Github className="h-4 w-4" />
-                      <TranslatedSpan pt="Código" en="Code" />
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 group cursor-pointer"
+                      >
+                        <Github className="h-4 w-4" />
+                        <TranslatedSpan pt="Código" en="Code" />
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    )}
 
                     <a
                       href={project.site}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold transition-all duration-300 hover:scale-105 group cursor-pointer"
+                      className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#ffd95a] to-[#ff6b6b] hover:from-[#ffed4e] hover:to-[#ff5252] text-slate-900 font-semibold transition-all duration-300 hover:scale-105 group cursor-pointer ${
+                        project.github ? 'flex-1' : 'w-full'
+                      }`}
                     >
                       <Globe className="h-4 w-4" />
                       <TranslatedSpan pt="Demo" en="Demo" />
