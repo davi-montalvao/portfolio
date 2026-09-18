@@ -1,61 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💻 Davi Montalvão — Portfólio
 
-## Getting Started
+Site pessoal desenvolvido para apresentar minha trajetória, habilidades e projetos como desenvolvedor front-end.
 
-First, run the development server:
+🔗 Acesse: [davimontalvao.com.br](https://www.davimontalvao.com.br)
+
+## 💭 Sobre o projeto
+
+Portfólio construído com Next.js, com troca automática de idioma (PT/EN) de acordo com o país do visitante, animações fluidas com Framer Motion e design responsivo com Tailwind CSS.
+
+O site conta com as seguintes seções: Hero (apresentação e principais números, como anos de experiência e projetos entregues), Skills & Experiências (tecnologias organizadas por categoria: frontend, backend, linguagens e ferramentas), Portfólio de Projetos (seleção de projetos com filtros por categoria: Frontend, Games, APIs), Carreira (linha do tempo profissional) e Contato (formulário de mensagem e link direto para WhatsApp).
+
+## 🚀 Tecnologias utilizadas
+
+Next.js 16 (App Router, Turbopack), React 19 com TypeScript, Tailwind CSS, Framer Motion para animações, next-intl para internacionalização (PT/EN), Radix UI e lucide-react para componentes e ícones, e Vercel Analytics.
+
+## 🌎 Idioma automático por localização
+
+O site detecta o país do visitante (via header `x-vercel-ip-country` na Vercel) e abre em português para acessos do Brasil e em inglês para os demais países.
+
+Para testar localmente, defina o cookie `test-country` no DevTools (`BR` ou `US`) e recarregue a página — veja detalhes no código-fonte (`src/proxy.ts`).
+
+## 🎲 Como executar o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/davi-montalvao/portfolio.git
+cd portfolio
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-### Testar idioma por país (geo)
+## 📦 Deploy
 
-O site abre em **inglês** para visitantes de fora do Brasil e em **português** para o Brasil (na Vercel isso usa o header `x-vercel-ip-country`).
+Hospedado na [Vercel](https://vercel.com), com deploy automático a partir da branch `main`.
 
-**Localmente (desenvolvimento):**
+## 👤 Autor
 
-1. Com o servidor rodando (`pnpm dev`), abra o DevTools (F12) → aba **Console**.
-2. Para simular acesso de **fora do Brasil** (site em inglês):
-   ```js
-   document.cookie = 'test-country=US;path=/;max-age=3600'
-   ```
-   Depois recarregue a página (F5).
-3. Para simular acesso do **Brasil** (site em português):
-   ```js
-   document.cookie = 'test-country=BR;path=/;max-age=3600'
-   ```
-   Recarregue a página.
-4. Para limpar o teste e voltar ao padrão (português local):
-   ```js
-   document.cookie = 'test-country=;path=/;max-age=0'
-   ```
-   Recarregue.
+**Davi Montalvão** — [LinkedIn](https://www.linkedin.com/in/davi-montalvao-dev/) • [GitHub](https://github.com/davi-montalvao) • drmontalvao@gmail.com
 
-**Em produção (Vercel):** o país é detectado automaticamente pelo IP; não é necessário fazer nada. Para validar, use um VPN com servidor fora do Brasil e acesse o site.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:!!!!!
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feito com 💜 e persistência 🚀
