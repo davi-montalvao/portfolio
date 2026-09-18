@@ -77,6 +77,19 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
+  icons: {
+    icon: [
+      {
+        url: '/icon-light.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+    apple: '/foto-perfil.jpg',
+  },
 };
 
 export default async function RootLayout({
@@ -102,9 +115,17 @@ export default async function RootLayout({
   return (
     <html lang={initialLocale === 'en' ? 'en' : 'pt-BR'} className={`${inter.variable} dark`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/foto-perfil.jpg" />
-        <meta name="theme-color" content="#0a0a0a" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#ffffff"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#0a0a0a"
+        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"

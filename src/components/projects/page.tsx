@@ -27,6 +27,7 @@ import batmanImage from '@/assets/batman.jpeg';
 import starWars from '@/assets/star-wars.png';
 import buscaCineImage from '@/assets/busca-cine.jpeg';
 import plenarteBalletImage from '@/assets/plenarte-ballet.png';
+import pokemonHubImage from '@/assets/pokemon-hub.png';
 
 const categories = [
   {
@@ -87,6 +88,19 @@ const projects = [
     site: 'https://www.plenarteballet.com.br/',
     technologies: ['React', 'TypeScript', 'CSS3', 'Responsivo'],
     featured: true,
+    category: 'Frontend',
+  },
+  {
+    title: 'Pokemon Hub',
+    description: {
+      pt: 'App para explorar Pokémon com busca, filtro por tipo, detalhes e favoritos. Nasceu de uma conversa com minha filha e foi feito com Next.js e PokéAPI.',
+      en: 'Pokémon app with search, type filters, details and favorites. Born from a conversation with my daughter, built with Next.js and PokéAPI.',
+    },
+    image: pokemonHubImage,
+    github: 'https://github.com/davi-montalvao/pokemon-hub',
+    site: 'https://pokemon-hub-chi.vercel.app/',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PokéAPI'],
+    featured: false,
     category: 'Frontend',
   },
   {
